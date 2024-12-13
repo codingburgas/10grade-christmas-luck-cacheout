@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1500</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,31 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>157</x>
+      <y>553</y>
+      <width>206</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 30px;
+background-color: #A366FF;
+color: white;
+border-radius: 15px;
+font-weight:bold;
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Get started</string>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>
