@@ -14,13 +14,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/dashboard.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
+    lib/dashboard.h \
     lib/mainwindow.h
 
 FORMS += \
+    ui/dashboard.ui \
     ui/mainwindow.ui
 
 RESOURCES += \
