@@ -27,13 +27,17 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 30px;
-background-color: #A366FF;
-color: white;
-border-radius: 15px;
-font-weight:bold;
-
-
+     <string notr="true">QPushButton{
+	font: 30px;
+	background-color: #A366FF;
+	color: white;
+	border-radius: 15px;
+	font-weight:bold;
+}
+QPushButton:hover{
+	color: white;
+	background-color: #8BB5FF;
+}
 </string>
     </property>
     <property name="text">
