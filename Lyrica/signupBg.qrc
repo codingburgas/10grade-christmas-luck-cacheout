@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/res">
-        <file>registerBackground.png</file>
+    <qresource prefix="/images">
+        <file>assets/registerBackground.png</file>
     </qresource>
 </RCC>
