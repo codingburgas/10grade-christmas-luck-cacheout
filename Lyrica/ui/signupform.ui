@@ -19,7 +19,7 @@
      <x>649</x>
      <y>637</y>
      <width>151</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
@@ -147,8 +147,8 @@ border-radius: 15px;
   <widget class="QPushButton" name="signinButton">
    <property name="geometry">
     <rect>
-     <x>796</x>
-     <y>630</y>
+     <x>795</x>
+     <y>631</y>
      <width>51</width>
      <height>31</height>
     </rect>
