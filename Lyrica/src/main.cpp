@@ -1,11 +1,11 @@
-#include "lib/mainwindow.h"
+#include "lib/practicewindow.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    PracticeWindow w;
     w.show();
     return a.exec();
 }

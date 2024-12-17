@@ -14,13 +14,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/practicewindow.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
-    lib/mainwindow.h
+    lib/mainwindow.h \
+    lib/practicewindow.h
 
 FORMS += \
+    ui/practicewindow.ui \
     ui/mainwindow.ui
 
 RESOURCES += \

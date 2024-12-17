@@ -2,6 +2,7 @@
     <qresource prefix="/images">
         <file>assets/mainCardsImg.png</file>
         <file>assets/mainBackground.png</file>
+        <file>assets/flashCard.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>assets/SpaceGrotesk.ttf</file>
