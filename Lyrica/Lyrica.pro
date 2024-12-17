@@ -14,14 +14,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/signinform.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
-    lib/mainwindow.h
+    lib/mainwindow.h \
+    lib/signinform.h
 
 FORMS += \
+    ui/signinform.ui \
     ui/mainwindow.ui
 
 RESOURCES += \
-    mainwindow.qrc
+    mainwindow.qrc \
+    signinBg.qrc
