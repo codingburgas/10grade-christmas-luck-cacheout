@@ -12,6 +12,7 @@ SOURCES += \
     BLL/src/credentials.cpp \
     BLL/src/signup.cpp \
     DAL/src/files.cpp \
+    src/app.cpp \
     src/signupform.cpp \
     src/main.cpp \
     src/mainwindow.cpp
@@ -21,6 +22,7 @@ HEADERS += \
     BLL/lib/precompileBLL.h \
     BLL/lib/signup.h \
     DAL/lib/files.h \
+    lib/app.h \
     lib/mainwindow.h \
     lib/signupform.h
 
