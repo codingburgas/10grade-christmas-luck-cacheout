@@ -4,12 +4,12 @@
 
 bool checkPassword(std::string password);
 
-bool checkValidity(const std::string& firstName, const std::string& lastName, const std::string& password);
+bool checkValidity(const std::string& username, const std::string& lastName, const std::string& password);
 
-bool checkFirstName(const std::string& firstName);
+bool checkUsername(const std::string& username);
 
-bool checkLastName(const std::string& lastName);
+bool checkEmail(const std::string& email);
 
-std::string createFileLine(std::string& loginFirstName, std::string& loginlastName, std::string& loginPassword);
+std::string createFileLine(std::string& username, std::string& loginlastName, std::string& loginPassword);
 
 #endif // SIGNUP_H

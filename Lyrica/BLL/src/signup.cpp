@@ -25,29 +25,29 @@ bool checkPassword(std::string password)
         return false;
 }
 
-bool checkValidity(const std::string& firstName, const std::string& lastName, const std::string& password) {
-    return checkPassword(password) && checkFirstName(firstName) && checkLastName(lastName);
+bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
+    return checkPassword(password) && checkUsername(username) && checkEmail(email);
 }
 
-bool checkFirstName(const std::string& firstName) {
-    // Check if firstName is non-empty and does not contain spaces
-    bool checkSize = !firstName.empty();
-    bool checkSpaces = (firstName.find(' ') == std::string::npos);
+bool checkUsername(const std::string& username) {
+    // Check if the username is non-empty and does not contain spaces
+    bool checkSize = !username.empty();
+    bool checkSpaces = (username.find(' ') == std::string::npos);
 
     return checkSize && checkSpaces;
 }
 
-bool checkLastName(const std::string& lastName) {
-    // Check if lastName is non-empty and does not contain spaces
-    bool checkSize = !lastName.empty();
-    bool checkSpaces = (lastName.find(' ') == std::string::npos);
+bool checkEmail(const std::string& email) {
+    // Check if the email is non-empty and does not contain spaces
+    bool checkSize = !email.empty();
+    bool checkSpaces = (email.find(' ') == std::string::npos);
 
     return checkSize && checkSpaces;
 }
 
-std::string createFileLine(std::string& firstName, std::string& lastName, std::string& password)
+std::string createFileLine(std::string& username, std::string& email, std::string& password)
 {
     std::string inputLine;
-    inputLine = firstName + " " + lastName + " " + password;
+    inputLine = username + " " + email + " " + password;
     return inputLine;
 }

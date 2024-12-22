@@ -37,13 +37,13 @@ bool checkIfInFile(std::fstream& file, std::string& line)
     return false;
 }
 
-bool checkIfInFileLine(std::fstream& file, std::string& firstName, std::string lastName)
+bool checkIfInFileLine(std::fstream& file, std::string& username, std::string email)
 {
     std::string fileLine;
     while (!file.eof())
     {
         std::getline(file, fileLine);
-        if (fileLine.find(firstName) != std::string::npos && fileLine.find(lastName) != std::string::npos)
+        if (fileLine.find(username) != std::string::npos && fileLine.find(email) != std::string::npos)
         {
             return true;
         }

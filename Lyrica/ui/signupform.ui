@@ -25,8 +25,15 @@
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>16</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:16px;
+color:black;
+font-weight:500pt;</string>
    </property>
    <property name="text">
     <string>Already Registered?</string>
@@ -42,11 +49,17 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 30px;
-background-color: #A366FF;
-color: white;
-border-radius: 15px;
-font-weight:bold;
+    <string notr="true">QPushButton{
+	font: 30px;
+	background-color: #A366FF;
+	color: white;
+	border-radius: 15px;
+	font-weight:bold;
+}
+QPushButton:hover{
+	color: white;
+	background-color: #8BB5FF;
+}
 </string>
    </property>
    <property name="text">
@@ -63,10 +76,11 @@ font-weight:bold;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, 13);
+    <string notr="true">background-color: rgba(255, 255, 255, 15);
 border: 5px;
-border-color: rgb(255, 255, 255);
+border-color: white;
 border-radius: 15px;
+font: 20px;
 </string>
    </property>
   </widget>
@@ -82,8 +96,16 @@ border-radius: 15px;
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>36</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:36px;
+color:white;
+font-weight:600pt;
+</string>
    </property>
    <property name="text">
     <string>Sign up</string>
@@ -101,8 +123,15 @@ border-radius: 15px;
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>20</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
    </property>
    <property name="text">
     <string>Password</string>
@@ -112,7 +141,7 @@ border-radius: 15px;
    <property name="geometry">
     <rect>
      <x>566</x>
-     <y>196</y>
+     <y>186</y>
      <width>221</width>
      <height>21</height>
     </rect>
@@ -120,8 +149,15 @@ border-radius: 15px;
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>16</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:16px;
+color:white;
+font-weight:500pt;</string>
    </property>
    <property name="text">
     <string>Just some details to get you in!</string>
@@ -141,21 +177,30 @@ border-radius: 15px;
 border: 5px;
 border-color: rgb(255, 255, 255);
 border-radius: 15px;
+font: 20px;
 </string>
    </property>
   </widget>
   <widget class="QPushButton" name="signinButton">
    <property name="geometry">
     <rect>
-     <x>795</x>
-     <y>631</y>
-     <width>51</width>
-     <height>31</height>
+     <x>800</x>
+     <y>633</y>
+     <width>60</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"> border:  none;
-color: white;</string>
+    <string notr="true">QPushButton{
+	font: 17px;
+	background-color: transparent;
+	color: #A366FF;
+	font-weight:bold;
+	border:  none;
+}
+QPushButton:hover{
+	color: #8BB5FF;
+}</string>
    </property>
    <property name="text">
     <string>Sign In</string>
@@ -173,8 +218,15 @@ color: white;</string>
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>20</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
    </property>
    <property name="text">
     <string>Email</string>
@@ -194,6 +246,7 @@ color: white;</string>
 border: 5px;
 border-color: rgb(255, 255, 255);
 border-radius: 15px;
+font: 20px;
 </string>
    </property>
   </widget>
@@ -209,8 +262,15 @@ border-radius: 15px;
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>20</pointsize>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
    </property>
    <property name="text">
     <string>Username</string>
