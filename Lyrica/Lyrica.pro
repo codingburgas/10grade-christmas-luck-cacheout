@@ -14,14 +14,20 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/finalwindow.cpp \
     src/main.cpp \
-    src/mainwindow.cpp
+    src/mainwindow.cpp \
+    src/setexplorer.cpp
 
 HEADERS += \
-    lib/mainwindow.h
+    lib/finalwindow.h \
+    lib/mainwindow.h \
+    lib/setexplorer.h
 
 FORMS += \
-    ui/mainwindow.ui
+    ui/finalwindow.ui \
+    ui/mainwindow.ui \
+    ui/setexplorer.ui
 
 RESOURCES += \
     mainwindow.qrc
