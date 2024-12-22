@@ -25,10 +25,6 @@ bool checkPassword(std::string password)
         return false;
 }
 
-bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
-    return checkPassword(password) && checkUsername(username) && checkEmail(email);
-}
-
 bool checkUsername(const std::string& username) {
     // Check if the username is non-empty and does not contain spaces
     bool checkSize = !username.empty();
@@ -42,7 +38,32 @@ bool checkEmail(const std::string& email) {
     bool checkSize = !email.empty();
     bool checkSpaces = (email.find(' ') == std::string::npos);
 
-    return checkSize && checkSpaces;
+    bool checkAt = false;
+    size_t atPosition = email.find('@');
+    if (atPosition != std::string::npos && email.find('@', atPosition + 1) == std::string::npos) {
+        checkAt = true; // No '@' or more than one '@'
+    }
+
+    // Check if there is at least one character before and after the '@'
+    bool checkBandA = false;
+    if (atPosition != 0 && atPosition != email.size() - 1) {
+        checkBandA = true;
+    }
+
+    // Check if the string contains a '.' after the '@'
+    bool checkDot = false;
+    size_t dotPosition = email.find('.', atPosition);
+    if (dotPosition != std::string::npos && dotPosition != email.size() - 1) {
+        checkDot = true; // No '.' or '.' at the end
+    }
+
+    return checkSize && checkSpaces && checkAt && checkBandA && checkDot;
+}
+
+bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
+    bool check = false;
+    if(checkPassword(password) &&checkUsername(username) && checkEmail(email)) check = true;
+    return check;
 }
 
 std::string createFileLine(std::string& username, std::string& email, std::string& password)
