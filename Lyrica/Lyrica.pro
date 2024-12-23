@@ -14,14 +14,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/cardcreation.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
+    lib/cardcreation.h \
     lib/mainwindow.h
 
 FORMS += \
+    ui/cardcreation.ui \
     ui/mainwindow.ui
 
 RESOURCES += \
+    cardCreationBg.qrc \
     mainwindow.qrc
