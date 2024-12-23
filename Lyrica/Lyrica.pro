@@ -14,11 +14,21 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    BLL/src/credentials.cpp \
+    BLL/src/signin.cpp \
+    DAL/src/files.cpp \
+    src/app.cpp \
     src/signinform.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
+    BLL/lib/credentials.h \
+    BLL/lib/precompileBLL.h \
+    BLL/lib/signin.h \
+    BLL/lib/signin.h \
+    DAL/lib/files.h \
+    lib/app.h \
     lib/mainwindow.h \
     lib/signinform.h
 

@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include <QPixmap>
-
+#include "BLL/lib/signin.h"
+#include "BLL/lib/credentials.h"
+#include "DAL/lib/files.h"
 
 namespace Ui {
 class signinForm;
@@ -15,6 +17,9 @@ class signinForm : public QDialog
 
 public:
     explicit signinForm(QWidget *parent = nullptr);
+    void textBoxHandler();
+    void actionHandler();
+    bool signInHandler();
     ~signinForm();
 
 private:
