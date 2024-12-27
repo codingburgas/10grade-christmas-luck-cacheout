@@ -14,13 +14,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    src/setexplorer.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
+    lib/setexplorer.h \
     lib/mainwindow.h
 
 FORMS += \
+    ui/setexplorer.ui \
     ui/mainwindow.ui
 
 RESOURCES += \

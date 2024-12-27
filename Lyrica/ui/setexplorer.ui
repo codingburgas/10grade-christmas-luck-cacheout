@@ -45,7 +45,7 @@ font-family: fontSpaceGrotesk;</string>
     <string>Pick a set:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="set1">
+  <widget class="QPushButton" name="set1">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -54,14 +54,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set5">
+  <widget class="QPushButton" name="set5">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -70,14 +73,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set6">
+  <widget class="QPushButton" name="set6">
    <property name="geometry">
     <rect>
      <x>415</x>
@@ -86,14 +92,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set7">
+  <widget class="QPushButton" name="set7">
    <property name="geometry">
     <rect>
      <x>749</x>
@@ -102,14 +111,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set8">
+  <widget class="QPushButton" name="set8">
    <property name="geometry">
     <rect>
      <x>1084</x>
@@ -118,14 +130,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set9">
+  <widget class="QPushButton" name="set9">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -134,14 +149,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set10">
+  <widget class="QPushButton" name="set10">
    <property name="geometry">
     <rect>
      <x>415</x>
@@ -150,14 +168,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set11">
+  <widget class="QPushButton" name="set11">
    <property name="geometry">
     <rect>
      <x>749</x>
@@ -166,14 +187,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set12">
+  <widget class="QPushButton" name="set12">
    <property name="geometry">
     <rect>
      <x>1084</x>
@@ -182,14 +206,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set2">
+  <widget class="QPushButton" name="set2">
    <property name="geometry">
     <rect>
      <x>415</x>
@@ -198,14 +225,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set3">
+  <widget class="QPushButton" name="set3">
    <property name="geometry">
     <rect>
      <x>749</x>
@@ -214,14 +244,17 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="set4">
+  <widget class="QPushButton" name="set4">
    <property name="geometry">
     <rect>
      <x>1084</x>
@@ -230,8 +263,11 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-color:transparent;</string>
    </property>
    <property name="text">
     <string/>

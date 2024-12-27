@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::SetExplorer *ui;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 };
 
 #endif // SETEXPLORER_H
