@@ -55,13 +55,14 @@ QLabel:hover{
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>136</y>
+     <y>103</y>
      <width>900</width>
-     <height>60</height>
+     <height>125</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">qproperty-alignment: AlignCenter;
+    <string notr="true">qproperty-wordWrap: true;
+qproperty-alignment: AlignCenter;
 font-weight: bold;
 font-family: fontSpaceGrotesk;
 color:black;
@@ -179,6 +180,14 @@ border: none;</string>
     <string/>
    </property>
   </widget>
+  <zorder>background</zorder>
+  <zorder>backArrow</zorder>
+  <zorder>titleTextBox</zorder>
+  <zorder>knowTextBox</zorder>
+  <zorder>dontKnowTextBox</zorder>
+  <zorder>hintTextBox</zorder>
+  <zorder>flashCard</zorder>
+  <zorder>flashCardTextBox</zorder>
  </widget>
  <resources/>
  <connections/>
