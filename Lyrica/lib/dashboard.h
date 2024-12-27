@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::dashboard *ui;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 };
 
 #endif // DASHBOARD_H
