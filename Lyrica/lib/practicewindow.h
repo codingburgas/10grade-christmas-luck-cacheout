@@ -12,16 +12,6 @@ namespace Ui {
 class PracticeWindow;
 }
 
-class HoverLabel : public QLabel {
-    Q_OBJECT
-public:
-    explicit HoverLabel(QWidget *parent = nullptr);
-
-protected:
-    void enterEvent(QEnterEvent *event) override;
-    void leaveEvent(QEvent *event) override;
-};
-
 class PracticeWindow : public QDialog
 {
     Q_OBJECT
@@ -33,8 +23,7 @@ public:
 
 private:
     Ui::PracticeWindow *ui;
-    HoverLabel *flashCardHover;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 };
-
 
 #endif // PRACTICEWINDOW_H

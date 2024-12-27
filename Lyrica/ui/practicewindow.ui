@@ -71,22 +71,6 @@ font:60px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="flashCard">
-   <property name="geometry">
-    <rect>
-     <x>536</x>
-     <y>302</y>
-     <width>418</width>
-     <height>224</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="knowTextBox">
    <property name="geometry">
     <rect>
@@ -176,6 +160,23 @@ font-family: fontSpaceGrotesk;</string>
    </property>
    <property name="text">
     <string>*Click the card to reveal explanation*</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="flashCard">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>302</y>
+     <width>418</width>
+     <height>224</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border: none;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
