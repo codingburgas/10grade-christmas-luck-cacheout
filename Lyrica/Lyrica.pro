@@ -8,6 +8,11 @@ CONFIG += c++17
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
 SOURCES += \
     BLL/src/credentials.cpp \
     BLL/src/signup.cpp \
@@ -30,6 +35,7 @@ FORMS += \
     ui/signupform.ui \
     ui/mainwindow.ui
 
+<<<<<<< HEAD
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -37,3 +43,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     signupBg.qrc
+=======
+RESOURCES += \
+    mainwindow.qrc
+>>>>>>> 780839987fdf90158c9f13ce1df47dd4ff0a0969

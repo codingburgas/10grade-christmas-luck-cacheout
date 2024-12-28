@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="getStartedBtn">
     <property name="geometry">
      <rect>
       <x>157</x>
@@ -27,19 +27,120 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 30px;
-background-color: #A366FF;
-color: white;
-border-radius: 15px;
-font-weight:bold;
-
-
+     <string notr="true">QPushButton{
+	font: 30px;
+	background-color: #A366FF;
+	color: white;
+	border-radius: 15px;
+	font-weight:bold;
+}
+QPushButton:hover{
+	color: white;
+	background-color: #8BB5FF;
+}
 </string>
     </property>
     <property name="text">
      <string>Get started</string>
     </property>
    </widget>
+   <widget class="Line" name="topHorizLine">
+    <property name="geometry">
+     <rect>
+      <x>113</x>
+      <y>73</y>
+      <width>1273</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="bottomHorizLine">
+    <property name="geometry">
+     <rect>
+      <x>113</x>
+      <y>717</y>
+      <width>1273</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="titleTextBox">
+    <property name="geometry">
+     <rect>
+      <x>157</x>
+      <y>180</y>
+      <width>558</width>
+      <height>154</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font:60px;
+qproperty-wordWrap: true;
+font-family: fontSpaceGrotesk;</string>
+    </property>
+    <property name="text">
+     <string>Master Languages Effortlessly</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bodyTextBox">
+    <property name="geometry">
+     <rect>
+      <x>157</x>
+      <y>360</y>
+      <width>498</width>
+      <height>112</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font:24px;
+qproperty-wordWrap: true;
+font-family: fontSpaceGrotesk;</string>
+    </property>
+    <property name="text">
+     <string>Boost your vocabulary with interactive flashcards. Practice anytime, anywhere, and make language learning fun and effective.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="flashCardsImg">
+    <property name="geometry">
+     <rect>
+      <x>807</x>
+      <y>139</y>
+      <width>514</width>
+      <height>463</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1500</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>background</zorder>
+   <zorder>getStartedBtn</zorder>
+   <zorder>topHorizLine</zorder>
+   <zorder>bottomHorizLine</zorder>
+   <zorder>titleTextBox</zorder>
+   <zorder>bodyTextBox</zorder>
+   <zorder>flashCardsImg</zorder>
   </widget>
  </widget>
  <resources/>
