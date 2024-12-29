@@ -1,4 +1,4 @@
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,15 +35,6 @@ FORMS += \
     ui/signupform.ui \
     ui/mainwindow.ui
 
-<<<<<<< HEAD
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
 RESOURCES += \
-    signupBg.qrc
-=======
-RESOURCES += \
+    signupBg.qrc\
     mainwindow.qrc
->>>>>>> 780839987fdf90158c9f13ce1df47dd4ff0a0969
