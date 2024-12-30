@@ -26,6 +26,7 @@
 *.a
 *.lib
 
+Lyrica/build/
 # Executables
 *.exe
 *.out
