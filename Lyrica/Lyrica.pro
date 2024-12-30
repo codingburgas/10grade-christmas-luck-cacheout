@@ -20,7 +20,6 @@ SOURCES += \
     src/app.cpp \
     src/signinform.cpp \
     BLL/src/signup.cpp \
-
     src/signupform.cpp \
     src/main.cpp \
     src/mainwindow.cpp
@@ -43,5 +42,5 @@ FORMS += \
 
 RESOURCES += \
     signupBg.qrc \
-     signinBg.qrc \
+    signinBg.qrc \
     mainwindow.qrc
