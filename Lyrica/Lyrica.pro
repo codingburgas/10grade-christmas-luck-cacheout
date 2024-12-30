@@ -23,6 +23,7 @@ SOURCES += \
     src/signupform.cpp \
     src/dashboard.cpp \
     src/setexplorer.cpp \
+    src/practicewindow.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
@@ -38,17 +39,17 @@ HEADERS += \
     lib/signinform.h \
     lib/setexplorer.h \
     lib/dashboard.h \
+    lib/practicewindow.h \
     lib/signupform.h
 
 FORMS += \
     ui/dashboard.ui \
     ui/signupform.ui \
     ui/signinform.ui \
+    ui/practicewindow.ui \
     ui/setexplorer.ui \
     ui/mainwindow.ui
-
-
-
+    
 RESOURCES += \
     signupBg.qrc \
     signinBg.qrc \

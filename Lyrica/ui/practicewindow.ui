@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PracticeWindow</class>
+ <widget class="QDialog" name="PracticeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="backArrow">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>91</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	font:85px;
+	color:#8E8E8E;
+	font-weight:2px;
+	qproperty-alignment: AlignCenter;
+	font-family: fontSpaceGrotesk;
+}
+QLabel:hover{
+	color: #8BB5FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>←</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="titleTextBox">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>103</y>
+     <width>900</width>
+     <height>125</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">qproperty-wordWrap: true;
+qproperty-alignment: AlignCenter;
+font-weight: bold;
+font-family: fontSpaceGrotesk;
+color:black;
+font:60px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="knowTextBox">
+   <property name="geometry">
+    <rect>
+     <x>209</x>
+     <y>391</y>
+     <width>124</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	color:#8BCD9A;
+	font:48px;
+	qproperty-alignment: AlignCenter;
+	font-family: fontSpaceGrotesk;
+}
+
+QLabel:hover{
+	color:#2bb54a;
+}</string>
+   </property>
+   <property name="text">
+    <string>Know</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="dontKnowTextBox">
+   <property name="geometry">
+    <rect>
+     <x>1091</x>
+     <y>391</y>
+     <width>261</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel{
+	color:#955F91;
+	font:48px;
+	qproperty-alignment: AlignCenter;
+	font-family: fontSpaceGrotesk;
+}
+
+QLabel:hover{
+	color:#dd17d0;
+}</string>
+   </property>
+   <property name="text">
+    <string>Don't Know</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="flashCardTextBox">
+   <property name="geometry">
+    <rect>
+     <x>575</x>
+     <y>345</y>
+     <width>330</width>
+     <height>130</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">qproperty-wordWrap: true;
+qproperty-alignment: AlignCenter;
+color:white;
+font:30px;
+font-weight:bold;
+font-family: fontSpaceGrotesk;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hintTextBox">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>530</y>
+     <width>280</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">qproperty-alignment: AlignCenter;
+color:#8E8E8E;
+font:14px;
+font-weight:bold;
+font-family: fontSpaceGrotesk;</string>
+   </property>
+   <property name="text">
+    <string>*Click the card to reveal explanation*</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="flashCard">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>302</y>
+     <width>418</width>
+     <height>224</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;
+border: none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>background</zorder>
+  <zorder>backArrow</zorder>
+  <zorder>titleTextBox</zorder>
+  <zorder>knowTextBox</zorder>
+  <zorder>dontKnowTextBox</zorder>
+  <zorder>hintTextBox</zorder>
+  <zorder>flashCard</zorder>
+  <zorder>flashCardTextBox</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
