@@ -4,6 +4,7 @@
         <file>assets/mainBackground.png</file>
         <file>assets/dashboardBg.png</file>
         <file>assets/card.png</file>
+        <file>assets/flashCard.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>assets/SpaceGrotesk.ttf</file>

@@ -22,8 +22,10 @@ SOURCES += \
     BLL/src/signup.cpp \
     src/signupform.cpp \
     src/dashboard.cpp \
+    src/setexplorer.cpp \
     src/main.cpp \
     src/mainwindow.cpp
+
 
 HEADERS += \
     BLL/lib/credentials.h \
@@ -34,17 +36,18 @@ HEADERS += \
     lib/app.h \
     lib/mainwindow.h \
     lib/signinform.h \
+    lib/setexplorer.h \
+    lib/dashboard.h \
     lib/signupform.h
 
 FORMS += \
+    ui/dashboard.ui \
     ui/signupform.ui \
     ui/signinform.ui \
-    lib/dashboard.h \
-    lib/mainwindow.h
-
-FORMS += \
-    ui/dashboard.ui \
+    ui/setexplorer.ui \
     ui/mainwindow.ui
+
+
 
 RESOURCES += \
     signupBg.qrc \
