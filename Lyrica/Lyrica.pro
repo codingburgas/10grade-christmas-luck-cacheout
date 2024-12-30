@@ -1,4 +1,4 @@
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,23 +19,29 @@ SOURCES += \
     DAL/src/files.cpp \
     src/app.cpp \
     src/signinform.cpp \
+    BLL/src/signup.cpp \
+
+    src/signupform.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
     BLL/lib/credentials.h \
     BLL/lib/precompileBLL.h \
-    BLL/lib/signin.h \
+    BLL/lib/signup.h \
     BLL/lib/signin.h \
     DAL/lib/files.h \
     lib/app.h \
     lib/mainwindow.h \
-    lib/signinform.h
+    lib/signinform.h \
+    lib/signupform.h
 
 FORMS += \
+    ui/signupform.ui \
     ui/signinform.ui \
     ui/mainwindow.ui
 
 RESOURCES += \
-    mainwindow.qrc \
-    signinBg.qrc
+    signupBg.qrc \
+     signinBg.qrc \
+    mainwindow.qrc

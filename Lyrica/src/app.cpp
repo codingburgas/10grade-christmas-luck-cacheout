@@ -5,6 +5,6 @@ App::App(){
 }
 
 void App::display(){
-    signIn.show();
-    signIn.actionHandler();
+    signUp.show();
+    signUp.actionHandler();
 }
