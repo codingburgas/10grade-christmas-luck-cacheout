@@ -1,7 +1,8 @@
 #ifndef APP_H
 #define APP_H
-
 #include <iostream>
+#include "lib/mainwindow.h"
+#include "lib/signinform.h"
 #include "lib/signupform.h"
 
 class App{
@@ -11,6 +12,8 @@ public:
 
 
 private:
+    MainWindow mainWindow;
+    signinForm signIn;
     signupForm signUp;
 };
 

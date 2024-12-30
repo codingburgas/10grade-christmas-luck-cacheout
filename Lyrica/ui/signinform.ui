@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>signinForm</class>
+ <widget class="QDialog" name="signinForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Signin">
+   <property name="geometry">
+    <rect>
+     <x>566</x>
+     <y>143</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:36px;
+color:white;
+font-weight:600pt;
+</string>
+   </property>
+   <property name="text">
+    <string>Sign in</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="usernameText">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>240</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
+   </property>
+   <property name="text">
+    <string>Username</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gladyoure">
+   <property name="geometry">
+    <rect>
+     <x>566</x>
+     <y>186</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:16px;
+color:white;
+font-weight:500pt;</string>
+   </property>
+   <property name="text">
+    <string>Glad you’re back!</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="emailText">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>335</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
+   </property>
+   <property name="text">
+    <string>Email</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="passwordText">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>430</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:20px;
+color:white;
+font-weight:400pt;</string>
+   </property>
+   <property name="text">
+    <string>Password</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="donthave">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>637</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>-1</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:16px;
+color:black;
+font-weight:500pt;</string>
+   </property>
+   <property name="text">
+    <string>Don’t have an account?</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="username">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>267</y>
+     <width>400</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 13);
+border: 5px;
+border-color: rgb(255, 255, 255);
+border-radius: 15px;
+font: 20px;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signupButton">
+   <property name="geometry">
+    <rect>
+     <x>805</x>
+     <y>631</y>
+     <width>60</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 17px;
+	background-color: transparent;
+	color: #A366FF;
+	font-weight:bold;
+	border:  none;
+}
+QPushButton:hover{
+	color: #8BB5FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Sign up</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signinButton">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>557</y>
+     <width>400</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	font: 30px;
+	background-color: #A366FF;
+	color: white;
+	border-radius: 15px;
+	font-weight:bold;
+}
+QPushButton:hover{
+	color: white;
+	background-color: #8BB5FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Sign in</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="email">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>362</y>
+     <width>400</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 13);
+border: 5px;
+border-color: rgb(255, 255, 255);
+border-radius: 15px;
+font: 20px;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="password">
+   <property name="geometry">
+    <rect>
+     <x>553</x>
+     <y>457</y>
+     <width>400</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(255, 255, 255, 13);
+border: 5px;
+border-color: rgb(255, 255, 255);
+border-radius: 15px;
+font: 20px;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
