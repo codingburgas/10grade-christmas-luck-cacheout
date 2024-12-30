@@ -55,14 +55,13 @@ QLabel:hover{
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>103</y>
+     <y>136</y>
      <width>900</width>
-     <height>125</height>
+     <height>60</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">qproperty-wordWrap: true;
-qproperty-alignment: AlignCenter;
+    <string notr="true">qproperty-alignment: AlignCenter;
 font-weight: bold;
 font-family: fontSpaceGrotesk;
 color:black;
@@ -72,24 +71,24 @@ font:60px;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="knowTextBox">
+  <widget class="QPushButton" name="knowTextBox">
    <property name="geometry">
     <rect>
      <x>209</x>
      <y>391</y>
      <width>124</width>
-     <height>40</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{
+    <string notr="true">QPushButton{
 	color:#8BCD9A;
 	font:48px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
 }
 
-QLabel:hover{
+QPushButton:hover{
 	color:#2bb54a;
 }</string>
    </property>
@@ -97,24 +96,24 @@ QLabel:hover{
     <string>Know</string>
    </property>
   </widget>
-  <widget class="QLabel" name="dontKnowTextBox">
+  <widget class="QPushButton" name="dontKnowTextBox">
    <property name="geometry">
     <rect>
      <x>1091</x>
      <y>391</y>
      <width>261</width>
-     <height>40</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QLabel{
+    <string notr="true">QPushButton{
 	color:#955F91;
 	font:48px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
 }
 
-QLabel:hover{
+QPushButton:hover{
 	color:#dd17d0;
 }</string>
    </property>
@@ -180,13 +179,13 @@ border: none;</string>
     <string/>
    </property>
   </widget>
+  <zorder>flashCard</zorder>
   <zorder>background</zorder>
   <zorder>backArrow</zorder>
   <zorder>titleTextBox</zorder>
   <zorder>knowTextBox</zorder>
   <zorder>dontKnowTextBox</zorder>
   <zorder>hintTextBox</zorder>
-  <zorder>flashCard</zorder>
   <zorder>flashCardTextBox</zorder>
  </widget>
  <resources/>

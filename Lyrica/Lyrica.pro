@@ -22,10 +22,11 @@ SOURCES += \
     BLL/src/signup.cpp \
     src/signupform.cpp \
     src/dashboard.cpp \
-    src/setexplorer.cpp \
     src/practicewindow.cpp \
+    src/finalwindow.cpp \
     src/main.cpp \
-    src/mainwindow.cpp
+    src/mainwindow.cpp \
+    src/setexplorer.cpp
 
 
 HEADERS += \
@@ -40,6 +41,7 @@ HEADERS += \
     lib/setexplorer.h \
     lib/dashboard.h \
     lib/practicewindow.h \
+    lib/finalwindow.h \
     lib/signupform.h
 
 FORMS += \
@@ -48,8 +50,9 @@ FORMS += \
     ui/signinform.ui \
     ui/practicewindow.ui \
     ui/setexplorer.ui \
+    ui/finalwindow.ui \
     ui/mainwindow.ui
-    
+     
 RESOURCES += \
     signupBg.qrc \
     signinBg.qrc \
