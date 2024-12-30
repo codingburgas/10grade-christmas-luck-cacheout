@@ -21,6 +21,7 @@ SOURCES += \
     src/signinform.cpp \
     BLL/src/signup.cpp \
     src/signupform.cpp \
+    src/dashboard.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
@@ -38,6 +39,11 @@ HEADERS += \
 FORMS += \
     ui/signupform.ui \
     ui/signinform.ui \
+    lib/dashboard.h \
+    lib/mainwindow.h
+
+FORMS += \
+    ui/dashboard.ui \
     ui/mainwindow.ui
 
 RESOURCES += \
