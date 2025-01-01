@@ -8,7 +8,10 @@ SetExplorer::SetExplorer(QWidget *parent) :
     ui(new Ui::SetExplorer)
 {
     ui->setupUi(this);
+    SetExplorer::displaySetExplorer();
+}
 
+void SetExplorer::displaySetExplorer(){
     QPixmap card(":/images/assets/flashCard.png");
     QList<QPushButton*> addCardList = {
         ui->set1, ui->set2, ui->set3, ui->set4, ui->set5, ui->set6, ui->set7, ui->set8, ui->set9, ui->set10, ui->set11, ui->set12
@@ -24,9 +27,12 @@ SetExplorer::SetExplorer(QWidget *parent) :
     }
 }
 
-SetExplorer::~SetExplorer()
-{
-    delete ui;
+void SetExplorer::actionHandler(PageBools& pages){
+    connect(ui->set1, &QPushButton::clicked, this, [&pages, this](){
+        pages.setExplorerWindowShoudlDisplay = false;
+        pages.practiceWindowShouldDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 // Event filter to handle hover events
@@ -48,3 +54,7 @@ bool SetExplorer::eventFilter(QObject *obj, QEvent *event) {
     return QDialog::eventFilter(obj, event);
 }
 
+SetExplorer::~SetExplorer()
+{
+    delete ui;
+}

@@ -6,6 +6,10 @@ signupForm::signupForm(QWidget *parent)
     , ui(new Ui::signupForm)
 {
     ui->setupUi(this);
+    signupForm::displaySignUp();
+}
+
+void signupForm::displaySignUp(){
     QPixmap backgroundPix(":/images/assets/registerBackground.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 }
@@ -19,9 +23,24 @@ void signupForm::textBoxHandler(){
     credentials::password = Password.toStdString();
 }
 
-void signupForm::actionHandler(){
+void signupForm::actionHandler(PageBools& pages){
     connect(ui->signUpButton, &QPushButton::clicked, this, &signupForm::textBoxHandler);
     connect(ui->signUpButton, &QPushButton::clicked, this, &signupForm::signUpHandler);
+
+    //Page Handling
+    connect(ui->signUpButton, &QPushButton::clicked, this, [&pages, this](){
+        if(signupForm::signUpHandler()){
+            pages.signUpWindowShouldDisplay = false;
+            pages.dashboardWindowShouldDisplay = true;
+            emit pageStateChanged();
+        }
+    });
+
+    connect(ui->signinButton, &QPushButton::clicked, this, [&pages, this](){
+        pages.signUpWindowShouldDisplay = false;
+        pages.signInWindowShouldDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 bool signupForm::signUpHandler(){

@@ -6,6 +6,7 @@
 #include "BLL/lib/signin.h"
 #include "BLL/lib/credentials.h"
 #include "DAL/lib/files.h"
+#include "lib/pageHandler.h"
 
 namespace Ui {
 class signinForm;
@@ -17,13 +18,17 @@ class signinForm : public QDialog
 
 public:
     explicit signinForm(QWidget *parent = nullptr);
-    void textBoxHandler();
-    void actionHandler();
-    bool signInHandler();
+    void actionHandler(PageBools& pages);
     ~signinForm();
+
+signals:
+    void pageStateChanged();
 
 private:
     Ui::signinForm *ui;
+    void displaySignIn();
+    void textBoxHandler();
+    bool signInHandler();
 };
 
 #endif // SIGNINFORM_H

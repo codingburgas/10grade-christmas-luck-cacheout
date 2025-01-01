@@ -6,6 +6,11 @@ signinForm::signinForm(QWidget *parent)
     , ui(new Ui::signinForm)
 {
     ui->setupUi(this);
+
+    signinForm::displaySignIn();
+}
+
+void signinForm::displaySignIn(){
     QPixmap backgroundPix(":/images/assets/signinBackground.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 }
@@ -19,9 +24,24 @@ void signinForm::textBoxHandler(){
     credentials::password = Password.toStdString();
 }
 
-void signinForm::actionHandler(){
+void signinForm::actionHandler(PageBools& pages){
     connect(ui->signinButton, &QPushButton::clicked, this, &signinForm::textBoxHandler);
     connect(ui->signinButton, &QPushButton::clicked, this, &signinForm::signInHandler);
+
+    //Page Handling
+    connect(ui->signinButton, &QPushButton::clicked, this, [&pages, this](){
+        if(signinForm::signInHandler()){
+            pages.signInWindowShouldDisplay = false;
+            pages.dashboardWindowShouldDisplay = true;
+            emit pageStateChanged();
+        }
+    });
+
+    connect(ui->signupButton, &QPushButton::clicked, this, [&pages, this](){
+        pages.signInWindowShouldDisplay = false;
+        pages.signUpWindowShouldDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 bool signinForm::signInHandler(){

@@ -8,6 +8,12 @@ dashboard::dashboard(QWidget *parent)
     , ui(new Ui::dashboard)
 {
     ui->setupUi(this);
+
+    dashboard::displayDashboard();
+}
+
+void dashboard::displayDashboard(){
+
     QPixmap card(":/images/assets/card.png");
     QPixmap backgroundPix(":/images/assets/dashboardBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
@@ -20,12 +26,15 @@ dashboard::dashboard(QWidget *parent)
             button->setIconSize(QSize(300, 157));
             button->installEventFilter(this);        }
     }
-
 }
 
-dashboard::~dashboard()
-{
-    delete ui;
+void dashboard::actionHandler(PageBools& pages){
+    //Page Handling
+    connect(ui->addNewSet, &QPushButton::clicked, this, [&pages, this](){
+        pages.dashboardWindowShouldDisplay = false;
+        pages.setExplorerWindowShoudlDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 bool dashboard::eventFilter(QObject *obj, QEvent *event) {
@@ -44,4 +53,9 @@ bool dashboard::eventFilter(QObject *obj, QEvent *event) {
         }
     }
     return QDialog::eventFilter(obj, event); // Call base class for other events
+}
+
+dashboard::~dashboard()
+{
+    delete ui;
 }

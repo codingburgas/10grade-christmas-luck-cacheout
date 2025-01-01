@@ -23,10 +23,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -42,7 +42,8 @@
 	font-weight:2px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
-	background-color:transparent;
+	border: none;
+	background-color: transparent;
 }
 QPushButton:hover{
 	color: #8BB5FF;
@@ -52,7 +53,7 @@ QPushButton:hover{
     <string>←</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="finishedTitle">
    <property name="geometry">
     <rect>
      <x>397</x>
@@ -73,7 +74,7 @@ font-weight:bold;
     <string>You have finished this set.</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="restartButton">
    <property name="geometry">
     <rect>
      <x>663</x>
@@ -89,8 +90,10 @@ font-weight:bold;
 	font-weight:2px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
-	background-color:transparent;
 	font-weight: bold;
+	border: none;
+	background-color: transparent;
+	
 }
 QPushButton:hover{
 	color: #8BB5FF;
@@ -100,7 +103,7 @@ QPushButton:hover{
     <string>Restart</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="orText">
    <property name="geometry">
     <rect>
      <x>725</x>
@@ -121,7 +124,7 @@ font-weight:bold;
     <string>or</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="tryButton">
    <property name="geometry">
     <rect>
      <x>398</x>
@@ -137,7 +140,8 @@ font-weight:bold;
 	font-weight:2px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
-	background-color:transparent;
+	border: none;
+	background-color: transparent;
 	font-weight: bold;
 }
 QPushButton:hover{

@@ -2,6 +2,7 @@
 #define FINALWINDOW_H
 
 #include <QDialog>
+#include "lib/pageHandler.h"
 
 namespace Ui {
 class finalwindow;
@@ -14,9 +15,14 @@ class finalwindow : public QDialog
 public:
     explicit finalwindow(QWidget *parent = nullptr);
     ~finalwindow();
+    void actionHandler(PageBools& pages);
+
+signals:
+    void pageStateChanged();
 
 private:
     Ui::finalwindow *ui;
+    void displayFinalWindow();
 };
 
 #endif // FINALWINDOW_H

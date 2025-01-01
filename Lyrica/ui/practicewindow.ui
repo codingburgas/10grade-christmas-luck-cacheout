@@ -86,6 +86,8 @@ font:60px;</string>
 	font:48px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
+	border: none;
+	background-color: transparent;
 }
 
 QPushButton:hover{
@@ -111,6 +113,8 @@ QPushButton:hover{
 	font:48px;
 	qproperty-alignment: AlignCenter;
 	font-family: fontSpaceGrotesk;
+	border: none;
+	background-color: transparent;
 }
 
 QPushButton:hover{
@@ -136,7 +140,8 @@ qproperty-alignment: AlignCenter;
 color:white;
 font:30px;
 font-weight:bold;
-font-family: fontSpaceGrotesk;</string>
+font-family: fontSpaceGrotesk;
+background-color: transparent;</string>
    </property>
    <property name="text">
     <string/>

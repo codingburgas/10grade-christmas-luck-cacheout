@@ -42,6 +42,17 @@ void PracticeWindow::DisplayPracticeWindow(){
     ui->flashCardTextBox->setAttribute(Qt::WA_TransparentForMouseEvents); //Makes the text to not disturb the flashCard hover effect
 }
 
+void PracticeWindow::actionHandler(PageBools& pages){
+    //Page Handling
+    if(finalCard){
+        connect(ui->knowTextBox, &QPushButton::clicked, this, [&pages, this](){
+            pages.practiceWindowShouldDisplay = false;
+            pages.finalWindowShouldDisplay = true;
+            emit pageStateChanged();
+        });
+    }
+}
+
 bool PracticeWindow::eventFilter(QObject *obj, QEvent *event){
     QPushButton *button = qobject_cast<QPushButton*>(obj);
     if (button) {

@@ -18,6 +18,7 @@ SOURCES += \
     BLL/src/signin.cpp \
     DAL/src/files.cpp \
     src/app.cpp \
+    src/pageHandler.cpp \
     src/signinform.cpp \
     BLL/src/signup.cpp \
     src/signupform.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     DAL/lib/files.h \
     lib/app.h \
     lib/mainwindow.h \
+    lib/pageHandler.h \
     lib/signinform.h \
     lib/setexplorer.h \
     lib/dashboard.h \
