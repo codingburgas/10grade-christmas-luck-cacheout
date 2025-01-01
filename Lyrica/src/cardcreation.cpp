@@ -6,7 +6,7 @@ cardCreation::cardCreation(QWidget *parent)
     , ui(new Ui::cardCreation)
 {
     ui->setupUi(this);
-    QPixmap backgroundPix(":/images/cardCreation.png");
+    QPixmap backgroundPix(":/images/cardCreateBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 }
 

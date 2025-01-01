@@ -27,5 +27,5 @@ FORMS += \
     ui/mainwindow.ui
 
 RESOURCES += \
-    cardCreationBg.qrc \
+    cardCreateBg.qrc \
     mainwindow.qrc
