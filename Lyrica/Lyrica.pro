@@ -25,6 +25,10 @@ SOURCES += \
     src/dashboard.cpp \
     src/practicewindow.cpp \
     src/finalwindow.cpp \
+    models/card.cpp \
+    models/customset.cpp \
+    models/user.cpp \
+    src/cardcreation.cpp \
     src/main.cpp \
     src/mainwindow.cpp \
     src/setexplorer.cpp
@@ -44,7 +48,11 @@ HEADERS += \
     lib/dashboard.h \
     lib/practicewindow.h \
     lib/finalwindow.h \
-    lib/signupform.h
+    lib/signupform.h \
+    lib/cardcreation.h \
+    models/card.h \
+    models/customset.h \
+    models/user.h
 
 FORMS += \
     ui/dashboard.ui \
@@ -53,9 +61,14 @@ FORMS += \
     ui/practicewindow.ui \
     ui/setexplorer.ui \
     ui/finalwindow.ui \
+    ui/cardcreation.ui \
     ui/mainwindow.ui
+
+FORMS += \
+    
      
 RESOURCES += \
     signupBg.qrc \
     signinBg.qrc \
+    cardCreateBg.qrc \
     mainwindow.qrc
