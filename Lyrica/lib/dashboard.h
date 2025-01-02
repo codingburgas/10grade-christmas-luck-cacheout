@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QPixmap>
 #include "lib/pageHandler.h"
+#include "BLL/lib/credentials.h"
 
 namespace Ui {
 class dashboard;
@@ -17,13 +18,13 @@ public:
     explicit dashboard(QWidget *parent = nullptr);
     ~dashboard();
     void actionHandler(PageBools& pages);
+    void displayDashboard();
 
 signals:
     void pageStateChanged();
 
 private:
     Ui::dashboard *ui;
-    void displayDashboard();
     bool eventFilter(QObject *obj, QEvent *event) override;
 };
 

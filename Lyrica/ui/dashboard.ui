@@ -45,13 +45,13 @@ qproperty-wordWrap: true;
 font-family: fontSpaceGrotesk;</string>
    </property>
    <property name="text">
-    <string>Welcome back</string>
+    <string>Welcome back, </string>
    </property>
   </widget>
   <widget class="QLabel" name="username">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>495</x>
      <y>117</y>
      <width>511</width>
      <height>50</height>

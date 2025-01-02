@@ -9,14 +9,16 @@ dashboard::dashboard(QWidget *parent)
 {
     ui->setupUi(this);
 
-    dashboard::displayDashboard();
 }
 
 void dashboard::displayDashboard(){
-
     QPixmap card(":/images/assets/card.png");
     QPixmap backgroundPix(":/images/assets/dashboardBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
+
+    QString dashUsername = QString::fromStdString(credentials::username);
+    ui->username->setText(dashUsername + "!");
+
     QList<QPushButton*> CardList = { ui->set1, ui->set2 ,ui->set3, ui->set4, ui->customSet1, ui->customSet2 ,ui->customSet3, ui->customSet4 };
 
     for (QPushButton* button : CardList) {
@@ -29,6 +31,8 @@ void dashboard::displayDashboard(){
 }
 
 void dashboard::actionHandler(PageBools& pages){
+    dashboard::displayDashboard();
+
     //Page Handling
     connect(ui->addNewSet, &QPushButton::clicked, this, [&pages, this](){
         pages.dashboardWindowShouldDisplay = false;
