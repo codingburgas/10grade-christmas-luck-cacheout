@@ -14,13 +14,19 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 SOURCES += \
+    models/card.cpp \
+    models/customset.cpp \
+    models/user.cpp \
     src/cardcreation.cpp \
     src/main.cpp \
     src/mainwindow.cpp
 
 HEADERS += \
     lib/cardcreation.h \
-    lib/mainwindow.h
+    models/card.h \
+    models/customset.h \
+    lib/mainwindow.h \
+    models/user.h
 
 FORMS += \
     ui/cardcreation.ui \

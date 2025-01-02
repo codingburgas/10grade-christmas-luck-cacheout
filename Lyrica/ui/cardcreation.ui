@@ -37,7 +37,7 @@
     <rect>
      <x>80</x>
      <y>76</y>
-     <width>581</width>
+     <width>1011</width>
      <height>61</height>
     </rect>
    </property>
@@ -67,7 +67,8 @@
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>36</pointsize>
+     <pointsize>25</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -82,14 +83,15 @@
     <rect>
      <x>476</x>
      <y>330</y>
-     <width>171</width>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>36</pointsize>
+     <pointsize>25</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -103,15 +105,16 @@
    <property name="geometry">
     <rect>
      <x>476</x>
-     <y>477</y>
-     <width>161</width>
+     <y>480</y>
+     <width>221</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>36</pointsize>
+     <pointsize>25</pointsize>
+     <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
@@ -124,33 +127,10 @@
   <widget class="QPushButton" name="submit">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>595</y>
-     <width>100</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:  none;
-color: #6D6D6D;</string>
-   </property>
-   <property name="text">
-    <string>submit</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="done">
-   <property name="geometry">
-    <rect>
-     <x>702</x>
-     <y>665</y>
-     <width>100</width>
-     <height>32</height>
+     <x>670</x>
+     <y>640</y>
+     <width>171</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -166,6 +146,30 @@ color: black;</string>
    </property>
    <property name="text">
     <string>Done</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="done">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>570</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>21</pointsize>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:  none;
+color: #6D6D6D;</string>
+   </property>
+   <property name="text">
+    <string>Next card</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="frontInput">
@@ -236,79 +240,6 @@ border-radius: 15px;
 color: black;
 padding-left: 15px;</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="translate">
-   <property name="geometry">
-    <rect>
-     <x>783</x>
-     <y>595</y>
-     <width>100</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border:  none;
-color: #6D6D6D;</string>
-   </property>
-   <property name="text">
-    <string>translate</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="frontLang">
-   <property name="geometry">
-    <rect>
-     <x>644</x>
-     <y>320</y>
-     <width>121</width>
-     <height>57</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-selection-background-color: rgb(124, 203, 255);</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>english</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QComboBox" name="backLang">
-   <property name="geometry">
-    <rect>
-     <x>644</x>
-     <y>470</y>
-     <width>121</width>
-     <height>57</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-selection-background-color: rgb(124, 203, 255);</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>english</string>
-    </property>
-   </item>
   </widget>
   <widget class="QPushButton" name="translation">
    <property name="geometry">

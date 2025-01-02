@@ -1,5 +1,4 @@
 #include "lib/mainwindow.h"
-#include "lib/cardcreation.h"
 
 #include <QApplication>
 
