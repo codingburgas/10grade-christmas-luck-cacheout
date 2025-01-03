@@ -51,6 +51,11 @@ void PracticeWindow::actionHandler(PageBools& pages){
             emit pageStateChanged();
         });
     }
+    connect(ui->backArrow, &QPushButton::clicked, this, [&pages, this](){
+        pages.practiceWindowShouldDisplay = false;
+        pages.dashboardWindowShouldDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 bool PracticeWindow::eventFilter(QObject *obj, QEvent *event){
