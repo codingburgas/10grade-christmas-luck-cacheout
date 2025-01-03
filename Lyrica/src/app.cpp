@@ -11,6 +11,7 @@ void App::signalCatch(){
     QObject::connect(&signIn, &signinForm::pageStateChanged, this, &App::display);
     QObject::connect(&dash, &dashboard::pageStateChanged, this, &App::display);
     QObject::connect(&setExplorer, &SetExplorer::pageStateChanged, this, &App::display);
+    QObject::connect(&cardCreate, &cardCreation::pageStateChanged, this, &App::display);
     QObject::connect(&practice, &PracticeWindow::pageStateChanged, this, &App::display);
     QObject::connect(&finalWindow, &finalwindow::pageStateChanged, this, &App::display);
 }
@@ -43,6 +44,7 @@ void App::display(){
 
     if(pages.cardCreationShouldDisplay){
         cardCreate.show();
+        cardCreate.actionHandler(pages);
     } else cardCreate.hide();
 
     if(pages.practiceWindowShouldDisplay){

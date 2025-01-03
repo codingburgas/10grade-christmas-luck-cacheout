@@ -20,7 +20,13 @@ int getFileSize(std::fstream& file)
 
 void writeInFile(std::fstream& file, std::string& line)
 {
+    file << std::endl;
     file << line << std::endl;
+}
+
+void writeInFileMult(std::fstream&file, std::string& line1, std::string& line2){
+    file << line1 << std::endl;
+    file << line2 << std::endl;
 }
 
 bool checkIfInFile(std::fstream& file, std::string& line)

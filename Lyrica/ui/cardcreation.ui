@@ -125,7 +125,7 @@ font-size: 60px;</string>
     <string>Back side</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="submit">
+  <widget class="QPushButton" name="doneButton">
    <property name="geometry">
     <rect>
      <x>670</x>
@@ -149,7 +149,7 @@ color: black;</string>
     <string>Done</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="done">
+  <widget class="QPushButton" name="submitCard">
    <property name="geometry">
     <rect>
      <x>480</x>

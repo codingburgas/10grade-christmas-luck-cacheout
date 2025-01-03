@@ -17,10 +17,8 @@ SOURCES += \
     BLL/src/credentials.cpp \
     BLL/src/signin.cpp \
     BLL/src/signup.cpp \
+    BLL/src/customset.cpp \
     DAL/src/files.cpp \
-    models/card.cpp \
-    models/customset.cpp \
-    models/user.cpp \
     src/app.cpp \
     src/pageHandler.cpp \
     src/signinform.cpp \
@@ -36,9 +34,10 @@ SOURCES += \
 
 HEADERS += \
     BLL/lib/credentials.h \
-    BLL/lib/precompileBLL.h \
+    BLL/lib/readySets.h \
     BLL/lib/signup.h \
     BLL/lib/signin.h \
+    BLL/lib/customset.h \
     DAL/lib/files.h \
     lib/app.h \
     lib/mainwindow.h \
@@ -49,10 +48,7 @@ HEADERS += \
     lib/practicewindow.h \
     lib/finalwindow.h \
     lib/signupform.h \
-    lib/cardcreation.h \
-    models/card.h \
-    models/customset.h \
-    models/user.h
+    lib/cardcreation.h
 
 FORMS += \
     ui/dashboard.ui \

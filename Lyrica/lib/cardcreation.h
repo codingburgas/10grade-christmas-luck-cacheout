@@ -3,9 +3,11 @@
 
 #include <QDialog>
 #include <QPixmap>
-#include "../models/user.h"
-#include "../models/customset.h"
-#include "../models/card.h"
+#include <iostream>
+#include <QObject>
+#include "lib/pageHandler.h"
+#include "BLL/lib/customset.h"
+
 namespace Ui {
 class cardCreation;
 }
@@ -17,15 +19,22 @@ class cardCreation : public QDialog
 public:
     explicit cardCreation(QWidget *parent = nullptr);
     ~cardCreation();
+    void actionHandler(PageBools& pages);
 
-private slots:
-
-    void on_submit_clicked();
+signals:
+    void pageStateChanged();
 
 private:
     Ui::cardCreation *ui;
+
+    void submitClicked();
+    void doneClicked();
+
     customSet currentSet;
+    customSetTitle currentTitle;
+
     int numOfCards;
+    int numOfTitles;
 };
 
 #endif // CARDCREATION_H

@@ -49,6 +49,12 @@ void dashboard::actionHandler(PageBools& pages){
         pages.setExplorerWindowShouldDisplay = true;
         emit pageStateChanged();
     });
+
+    connect(ui->createNewSet, &QPushButton::clicked, this, [&pages, this](){
+        pages.dashboardWindowShouldDisplay = false;
+        pages.cardCreationShouldDisplay = true;
+        emit pageStateChanged();
+    });
 }
 
 bool dashboard::eventFilter(QObject *obj, QEvent *event) {
