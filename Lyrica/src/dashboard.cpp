@@ -26,7 +26,8 @@ void dashboard::displayDashboard(){
             QIcon buttonIcon(card);
             button->setIcon(buttonIcon);
             button->setIconSize(QSize(300, 157));
-            button->installEventFilter(this);        }
+            button->installEventFilter(this);
+        }
     }
 }
 
@@ -34,9 +35,18 @@ void dashboard::actionHandler(PageBools& pages){
     dashboard::displayDashboard();
 
     //Page Handling
+    connect(ui->signOutButton, &QPushButton::clicked, this, [&pages, this](){
+        pages.dashboardWindowShouldDisplay = false;
+        pages.signUpWindowShouldDisplay = true;
+        credentials::username = "";
+        credentials::email = "";
+        credentials::password = "";
+        emit pageStateChanged();
+    });
+
     connect(ui->addNewSet, &QPushButton::clicked, this, [&pages, this](){
         pages.dashboardWindowShouldDisplay = false;
-        pages.setExplorerWindowShoudlDisplay = true;
+        pages.setExplorerWindowShouldDisplay = true;
         emit pageStateChanged();
     });
 }

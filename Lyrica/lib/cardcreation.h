@@ -19,7 +19,6 @@ public:
     ~cardCreation();
 
 private slots:
-    void on_done_clicked();
 
     void on_submit_clicked();
 

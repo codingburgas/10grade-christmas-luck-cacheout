@@ -32,6 +32,9 @@ void signupForm::actionHandler(PageBools& pages){
         if(signupForm::signUpHandler()){
             pages.signUpWindowShouldDisplay = false;
             pages.dashboardWindowShouldDisplay = true;
+            ui->username->setText("");
+            ui->email->setText("");
+            ui->password->setText("");
             emit pageStateChanged();
         }
     });

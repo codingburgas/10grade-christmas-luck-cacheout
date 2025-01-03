@@ -5,7 +5,8 @@ PageBools::PageBools(){
     signUpWindowShouldDisplay = false;
     signInWindowShouldDisplay = false;
     dashboardWindowShouldDisplay = false;
+    setExplorerWindowShouldDisplay = false;
+    cardCreationShouldDisplay = false;
     practiceWindowShouldDisplay = false;
-    setExplorerWindowShoudlDisplay = false;
     finalWindowShouldDisplay = false;
 }

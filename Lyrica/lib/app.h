@@ -7,6 +7,7 @@
 #include "lib/signupform.h"
 #include "../lib/dashboard.h"
 #include "../lib/setexplorer.h"
+#include "../lib/cardcreation.h"
 #include "../lib/practicewindow.h"
 #include "../lib/finalwindow.h"
 #include "../lib/pageHandler.h"
@@ -27,6 +28,7 @@ private:
     signupForm signUp;
     dashboard dash;
     SetExplorer setExplorer;
+    cardCreation cardCreate;
     PracticeWindow practice;
     finalwindow finalWindow;
     PageBools pages;

@@ -116,7 +116,8 @@ font-family: fontSpaceGrotesk;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -135,7 +136,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -154,7 +156,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -173,7 +176,9 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;
+</string>
    </property>
    <property name="text">
     <string/>
@@ -192,7 +197,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -211,7 +217,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -230,7 +237,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -249,7 +257,8 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;</string>
+    <string notr="true">background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string/>
@@ -267,8 +276,8 @@ font-family: fontSpaceGrotesk;</string>
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:40px;
-background-color:transparent;
-</string>
+background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string>&lt;</string>
@@ -286,8 +295,8 @@ background-color:transparent;
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:40px;
-background-color:transparent;
-</string>
+background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string>&gt;</string>
@@ -305,8 +314,8 @@ background-color:transparent;
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:40px;
-background-color:transparent;
-</string>
+background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string>&lt;</string>
@@ -324,8 +333,8 @@ background-color:transparent;
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:40px;
-background-color:transparent;
-</string>
+background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string>&gt;</string>
@@ -343,8 +352,8 @@ background-color:transparent;
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:60px;
-background-color:transparent;
-</string>
+background-color: transparent;
+border: none;</string>
    </property>
    <property name="text">
     <string>+</string>
@@ -362,11 +371,38 @@ background-color:transparent;
    <property name="styleSheet">
     <string notr="true">color: #8E8E8E;
 font:60px;
-background-color:transparent;
+background-color: transparent;
+border: none;
 </string>
    </property>
    <property name="text">
     <string>+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="signOutButton">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>117</y>
+     <width>120</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color: black;
+	background-color: transparent;
+	border: none;
+	font-family: Space-Grotesk;
+	font-weight: bold;
+	font:30px;
+}
+QPushButton::hover{
+	color: #8BB5FF;
+}</string>
+   </property>
+   <property name="text">
+    <string>Sign Out</string>
    </property>
   </widget>
  </widget>

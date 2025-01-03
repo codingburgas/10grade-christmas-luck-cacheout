@@ -16,18 +16,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 SOURCES += \
     BLL/src/credentials.cpp \
     BLL/src/signin.cpp \
+    BLL/src/signup.cpp \
     DAL/src/files.cpp \
+    models/card.cpp \
+    models/customset.cpp \
+    models/user.cpp \
     src/app.cpp \
     src/pageHandler.cpp \
     src/signinform.cpp \
-    BLL/src/signup.cpp \
     src/signupform.cpp \
     src/dashboard.cpp \
     src/practicewindow.cpp \
     src/finalwindow.cpp \
-    models/card.cpp \
-    models/customset.cpp \
-    models/user.cpp \
     src/cardcreation.cpp \
     src/main.cpp \
     src/mainwindow.cpp \

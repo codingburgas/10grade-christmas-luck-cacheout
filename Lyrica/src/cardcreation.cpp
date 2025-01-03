@@ -1,6 +1,7 @@
 #include "lib/cardcreation.h"
 #include "ui_cardcreation.h"
 #include<QDebug>
+
 cardCreation::cardCreation(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::cardCreation)
@@ -8,18 +9,8 @@ cardCreation::cardCreation(QWidget *parent)
     ui->setupUi(this);
     QPixmap backgroundPix(":/images/cardCreateBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
-    currentSet = customSet();
     numOfCards = 0;
-
 }
-
-cardCreation::~cardCreation()
-{
-    delete ui;
-}
-
-
-
 
 void cardCreation::on_submit_clicked()
 {
@@ -30,7 +21,7 @@ void cardCreation::on_submit_clicked()
     // goal.req = savingGoalAmount.toDouble();
     // currentUser.savingGoals.push_back(goal);
      numOfCards++;
-   qDebug() << "Number of cards:" << numOfCards;
+     qDebug() << "Number of cards:" << numOfCards;
      currentSet.numCards=  numOfCards;
 
     currentSet.cards.push_back(card());
@@ -44,8 +35,11 @@ void cardCreation::on_submit_clicked()
     ui->frontInput->setText("");
     ui->frontInput->setText("");
     ui->backinput->setText("");
+}
 
-
+cardCreation::~cardCreation()
+{
+    delete ui;
 }
 
 

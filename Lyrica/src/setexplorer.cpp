@@ -29,7 +29,7 @@ void SetExplorer::displaySetExplorer(){
 
 void SetExplorer::actionHandler(PageBools& pages){
     connect(ui->set1, &QPushButton::clicked, this, [&pages, this](){
-        pages.setExplorerWindowShoudlDisplay = false;
+        pages.setExplorerWindowShouldDisplay = false;
         pages.practiceWindowShouldDisplay = true;
         emit pageStateChanged();
     });

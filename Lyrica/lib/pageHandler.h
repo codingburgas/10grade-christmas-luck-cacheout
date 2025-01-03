@@ -8,7 +8,8 @@ public:
     bool signInWindowShouldDisplay;
     bool dashboardWindowShouldDisplay;
     bool practiceWindowShouldDisplay;
-    bool setExplorerWindowShoudlDisplay;
+    bool setExplorerWindowShouldDisplay;
+    bool cardCreationShouldDisplay;
     bool finalWindowShouldDisplay;
     PageBools();
 };

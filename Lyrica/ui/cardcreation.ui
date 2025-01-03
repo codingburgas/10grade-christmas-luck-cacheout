@@ -36,20 +36,21 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>76</y>
+     <y>71</y>
      <width>1011</width>
-     <height>61</height>
+     <height>70</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>48</pointsize>
+     <pointsize>-1</pointsize>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: black;</string>
+    <string notr="true">color: black;
+font-size: 60px;</string>
    </property>
    <property name="text">
     <string>Create your own card set.</string>
@@ -169,7 +170,7 @@ color: black;</string>
 color: #6D6D6D;</string>
    </property>
    <property name="text">
-    <string>Next card</string>
+    <string>Submit card</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="frontInput">
@@ -212,7 +213,8 @@ padding-left: 15px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: #F5F5F5;
-border-color: rgb(255, 255, 255);
+border-color: black;
+border-width: 1px;
 border-radius: 15px;
 color: black;
 padding-left: 15px;</string>

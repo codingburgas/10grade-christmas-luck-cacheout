@@ -33,6 +33,9 @@ void signinForm::actionHandler(PageBools& pages){
         if(signinForm::signInHandler()){
             pages.signInWindowShouldDisplay = false;
             pages.dashboardWindowShouldDisplay = true;
+            ui->username->setText("");
+            ui->email->setText("");
+            ui->password->setText("");
             emit pageStateChanged();
         }
     });

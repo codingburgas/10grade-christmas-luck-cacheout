@@ -36,10 +36,14 @@ void App::display(){
         dash.actionHandler(pages);
     } else dash.hide();
 
-    if(pages.setExplorerWindowShoudlDisplay){
+    if(pages.setExplorerWindowShouldDisplay){
         setExplorer.show();
         setExplorer.actionHandler(pages);
     } else setExplorer.hide();
+
+    if(pages.cardCreationShouldDisplay){
+        cardCreate.show();
+    } else cardCreate.hide();
 
     if(pages.practiceWindowShouldDisplay){
         practice.show();
