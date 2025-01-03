@@ -65,7 +65,7 @@ bool signinForm::signInHandler(){
     if(checkIfInFile(credentialsFile, fileLine)){
         std::cout << "Signed in successfully!" << std::endl;
         return true;
-    }
+    } else ui->warning->setText("Credentials not correct!");
     return false;
 }
 

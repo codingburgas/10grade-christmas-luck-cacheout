@@ -2,11 +2,11 @@
 
 PageBools::PageBools(){
     mainWindowShouldDisplay = false;
-    signUpWindowShouldDisplay = false;
+    signUpWindowShouldDisplay = true;
     signInWindowShouldDisplay = false;
     dashboardWindowShouldDisplay = false;
     setExplorerWindowShouldDisplay = false;
-    cardCreationShouldDisplay = true;
+    cardCreationShouldDisplay = false;
     practiceWindowShouldDisplay = false;
     finalWindowShouldDisplay = false;
 }

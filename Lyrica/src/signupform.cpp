@@ -66,6 +66,10 @@ bool signupForm::signUpHandler(){
             std::cout << "Successfully wrote in file!" << std::endl;
             return !check;
         }
+        if(!checkEmail(credentials::email)) ui->warning->setText("Input valid email!");
+        if(!checkPassword(credentials::password)) ui->warning->setText("Invalid password!");
+        if(!checkEmail(credentials::email) && !checkPassword(credentials::password)) ui->warning->setText("Invalid credentials!");
+
         credentialsFile.close();
     }
     return check;
