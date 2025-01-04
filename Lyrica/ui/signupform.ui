@@ -289,6 +289,30 @@ font-weight:400pt;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="warning">
+   <property name="geometry">
+    <rect>
+     <x>668</x>
+     <y>520</y>
+     <width>241</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>14</pointsize>
+     <fontweight>Light</fontweight>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:red;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>background</zorder>
   <zorder>Alreadyregistered</zorder>
   <zorder>signUpButton</zorder>
@@ -301,6 +325,7 @@ font-weight:400pt;</string>
   <zorder>emailText</zorder>
   <zorder>password</zorder>
   <zorder>usernameText</zorder>
+  <zorder>warning</zorder>
  </widget>
  <resources/>
  <connections/>

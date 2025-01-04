@@ -18,7 +18,7 @@ void cardCreation::actionHandler(PageBools& pages){
     connect(ui->submitCard, &QPushButton::clicked, this, [this](){
         if(!ui->titleinput->text().isEmpty() && !ui->frontInput->text().isEmpty() && !ui->backinput->text().isEmpty()){ //Checks that the text boxes aren't empty
             cardCreation::submitClicked();
-        }else std::cout << "Input card details first!" << std::endl;
+        }else ui->warning->setText("Input card details first!");
     });
 
     //Page Handling
@@ -28,7 +28,7 @@ void cardCreation::actionHandler(PageBools& pages){
             pages.cardCreationShouldDisplay = false;
             pages.dashboardWindowShouldDisplay = true;
             emit pageStateChanged();
-        } else std::cout << "Submit card first!" << std::endl; //IMPLEMENT THIS TEXT INTO THE UI!!!
+        } else ui->warning->setText("Submit card first!");
     });
 }
 

@@ -12,7 +12,9 @@ SetExplorer::SetExplorer(QWidget *parent) :
 }
 
 void SetExplorer::displaySetExplorer(){
+    QPixmap backgroundIm(":/images/assets/mainBackground.png");
     QPixmap card(":/images/assets/flashCard.png");
+    ui->background->setPixmap(backgroundIm.scaled(1500, 800, Qt::KeepAspectRatio));
     QList<QPushButton*> addCardList = {
         ui->set1, ui->set2, ui->set3, ui->set4, ui->set5, ui->set6, ui->set7, ui->set8, ui->set9, ui->set10, ui->set11, ui->set12
     };
@@ -31,6 +33,11 @@ void SetExplorer::actionHandler(PageBools& pages){
     connect(ui->set1, &QPushButton::clicked, this, [&pages, this](){
         pages.setExplorerWindowShouldDisplay = false;
         pages.practiceWindowShouldDisplay = true;
+        emit pageStateChanged();
+    });
+    connect(ui->backArrow, &QPushButton::clicked, this, [&pages, this](){
+        pages.setExplorerWindowShouldDisplay = false;
+        pages.dashboardWindowShouldDisplay = true;
         emit pageStateChanged();
     });
 }

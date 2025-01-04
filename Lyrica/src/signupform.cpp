@@ -10,6 +10,7 @@ signupForm::signupForm(QWidget *parent)
 }
 
 void signupForm::displaySignUp(){
+    // Setting up background image
     QPixmap backgroundPix(":/images/assets/registerBackground.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 }
@@ -66,6 +67,10 @@ bool signupForm::signUpHandler(){
             std::cout << "Successfully wrote in file!" << std::endl;
             return !check;
         }
+        if(!checkEmail(credentials::email)) ui->warning->setText("Input valid email!");
+        if(!checkPassword(credentials::password)) ui->warning->setText("Invalid password!");
+        if(!checkEmail(credentials::email) && !checkPassword(credentials::password)) ui->warning->setText("Invalid credentials!");
+
         credentialsFile.close();
     }
     return check;
