@@ -1,29 +1,311 @@
-title1
-running
-run
-getting
-get
-giving
-give
-walking
-walk
+German Adjectives
+schnell
+fast
+langsam
+slow
+groß
+big
+klein
+small
+heiß
+hot
+kalt
+cold
+stark
+strong
+schwach
+weak
+hell
+bright
+dunkel
+dark
+schön
+beautiful
+hässlich
+ugly
 
-title2
-seeing
-see
-looking
-look
-hitting
-hit
-punching
-punch
+French Verbs
+manger
+to eat
+boire
+to drink
+lire
+to read
+écrire
+to write
+parler
+to speak
+écouter
+to listen
+marcher
+to walk
+courir
+to run
+dormir
+to sleep
+ouvrir
+to open
+fermer
+to close
+apprendre
+to learn
 
-title3
-running
-run
-getting
-get
-giving
-give
-walking
-walk
+Russian Nouns
+книга (kniga)
+book
+стол (stol)
+table
+стул (stul)
+chair
+окно (okno)
+window
+дверь (dver’)
+door
+дом (dom)
+house
+машина (mashina)
+car
+солнце (solntse)
+sun
+луна (luna)
+moon
+река (reka)
+river
+лес (les)
+forest
+друг (drug)
+friend
+
+Spanish Colors
+rojo
+red
+azul
+blue
+verde
+green
+amarillo
+yellow
+naranja
+orange
+morado
+purple
+rosa
+pink
+negro
+black
+blanco
+white
+gris
+gray
+marrón
+brown
+dorado
+gold
+
+Italian Numbers
+uno
+one
+due
+two
+tre
+three
+quattro
+four
+cinque
+five
+sei
+six
+sette
+seven
+otto
+eight
+nove
+nine
+dieci
+ten
+undici
+eleven
+dodici
+twelve
+
+Japanese Basic Words
+こんにちは (konnichiwa)
+hello
+さようなら (sayounara)
+goodbye
+ありがとう (arigatou)
+thank you
+すみません (sumimasen)
+excuse me
+はい (hai)
+yes
+いいえ (iie)
+no
+本 (hon)
+book
+猫 (neko)
+cat
+犬 (inu)
+dog
+水 (mizu)
+water
+空 (sora)
+sky
+山 (yama)
+mountain
+
+Korean Basic Verbs
+먹다 (meokda)
+to eat
+마시다 (masida)
+to drink
+보다 (boda)
+to see
+쓰다 (sseuda)
+to write
+읽다 (ilgda)
+to read
+걷다 (geotda)
+to walk
+달리다 (dallida)
+to run
+자다 (jada)
+to sleep
+열다 (yeolda)
+to open
+닫다 (datda)
+to close
+배우다 (baeuda)
+to learn
+가르치다 (gareuchida)
+to teach
+
+Arabic Objects
+كتاب (kitab)
+book
+باب (bab)
+door
+كرسي (kursi)
+chair
+طاولة (tawila)
+table
+شباك (shubbak)
+window
+بيت (bayt)
+house
+سيارة (sayyara)
+car
+شمس (shams)
+sun
+قمر (qamar)
+moon
+نهر (nahr)
+river
+بحر (bahr)
+sea
+طريق (tareeq)
+road
+
+Portuguese Foods
+pão
+bread
+leite
+milk
+queijo
+cheese
+carne
+meat
+peixe
+fish
+arroz
+rice
+feijão
+beans
+fruta
+fruit
+legumes
+vegetables
+bolo
+cake
+chocolate
+chocolate
+sopa
+soup
+
+Swedish Household Items
+bord
+table
+stol
+chair
+säng
+bed
+soffa
+sofa
+dörr
+door
+fönster
+window
+hus
+house
+bok
+book
+lampa
+lamp
+spegel
+mirror
+klocka
+clock
+skål
+bowl
+
+Greek Basic Words
+γεια (geia)
+hello
+αντίο (antio)
+goodbye
+ευχαριστώ (efcharistó)
+thank you
+ναι (nai)
+yes
+όχι (ochi)
+no
+νερό (neró)
+water
+ψωμί (psomí)
+bread
+γάλα (gála)
+milk
+φως (fos)
+light
+σκύλος (skýlos)
+dog
+γάτα (gáta)
+cat
+βουνό (vounó)
+mountain
+
+Dutch Actions
+lopen
+to walk
+rennen
+to run
+eten
+to eat
+drinken
+to drink
+slapen
+to sleep
+lezen
+to read
+schrijven
+to write
+praten
+to talk
+luisteren
+to listen
+kijken
+to watch
+openen
+to open
+sluiten
+to close

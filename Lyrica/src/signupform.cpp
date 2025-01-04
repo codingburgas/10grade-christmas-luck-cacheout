@@ -65,7 +65,7 @@ bool signupForm::signUpHandler(){
         if (!check && checkValid) {
             writeInFile(credentialsFile, fileLine);
             std::cout << "Successfully wrote in file!" << std::endl;
-            return !check;
+            return true;
         }
         if(!checkEmail(credentials::email)) ui->warning->setText("Input valid email!");
         if(!checkPassword(credentials::password)) ui->warning->setText("Invalid password!");

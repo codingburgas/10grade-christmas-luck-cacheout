@@ -2,13 +2,16 @@
 
 bool checkPassword(std::string password)
 {
-    bool checkSize = false;
+    bool checkSize1 = false;
+    bool checkSize2 = false;
     bool checkSpaces = false;
     bool checkUpper = false;
     bool checkSpecial = false;
     bool checkNumber = false;
 
-    if (password.size() >= 6 && password.size() <= 16) checkSize = true;
+    if (password.size() >= 6 && password.size() <= 16) checkSize1 = true;
+
+    if(!password.empty()) checkSize2 = true;
 
     if (password.find(' ') != std::string::npos) checkSpaces = true;
 
@@ -19,7 +22,7 @@ bool checkPassword(std::string password)
         if (!(password[i] >= 65 && password[i] <= 90) && !(password[i] >= 48 && password[i] <= 57) && !(password[i] >= 97 && password[i] <= 122)) checkSpecial = true;
     }
 
-    if (checkSize && checkUpper && checkNumber && checkSpecial && !checkSpaces)
+    if (checkSize1 && checkSize2 && checkUpper && checkNumber && checkSpecial && !checkSpaces)
         return true;
     else
         return false;
@@ -62,7 +65,7 @@ bool checkEmail(const std::string& email) {
 
 bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
     bool check = false;
-    if(checkPassword(password) &&checkUsername(username) && checkEmail(email)) check = true;
+    if(checkPassword(password) && checkUsername(username) && checkEmail(email)) check = true;
     return check;
 }
 

@@ -28,11 +28,11 @@ signals:
 private:
     Ui::cardCreation *ui;
 
+    customSet currentSet;
+
     void submitClicked();
     void doneClicked();
     void cardCreationHandler();
-
-    customSet currentSet;
 
     int numOfCards;
     int numOfTitles;

@@ -109,7 +109,3 @@ cardCreation::~cardCreation()
 {
     delete ui;
 }
-
-
-
-
