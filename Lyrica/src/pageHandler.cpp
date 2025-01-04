@@ -1,12 +1,12 @@
 #include "../lib/pageHandler.h"
 
 PageBools::PageBools(){
-    mainWindowShouldDisplay = false;
+    mainWindowShouldDisplay = true;
     signUpWindowShouldDisplay = false;
     signInWindowShouldDisplay = false;
     dashboardWindowShouldDisplay = false;
     setExplorerWindowShouldDisplay = false;
-    cardCreationShouldDisplay = true;
+    cardCreationShouldDisplay = false;
     practiceWindowShouldDisplay = false;
     finalWindowShouldDisplay = false;
 }

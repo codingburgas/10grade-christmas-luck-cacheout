@@ -15,6 +15,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 SOURCES += \
     BLL/src/credentials.cpp \
+    BLL/src/readySets.cpp \
     BLL/src/signin.cpp \
     BLL/src/signup.cpp \
     BLL/src/customset.cpp \

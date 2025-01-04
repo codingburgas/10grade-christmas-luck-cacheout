@@ -4,7 +4,10 @@
 #include <QMainWindow>
 #include <QFontDatabase>
 #include <QPixmap>
-#include "../lib/pageHandler.h"
+#include "DAL/lib/files.h"
+#include "BLL/lib/readySets.h"
+#include "BLL/lib/customset.h"
+#include "lib/pageHandler.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +30,11 @@ signals:
 private:
     Ui::MainWindow *ui;
     void displayMainWindow();
+    void getReadySetsFromFile();
+    void getCustomSetsFromFile();
 
+    readySet readySet;
+    customSet customSet;
+    int numOfCards;
 };
 #endif // MAINWINDOW_H

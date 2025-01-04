@@ -7,6 +7,7 @@
 #include <QObject>
 #include "lib/pageHandler.h"
 #include "BLL/lib/customset.h"
+#include "DAL/lib/files.h"
 
 namespace Ui {
 class cardCreation;
@@ -29,9 +30,9 @@ private:
 
     void submitClicked();
     void doneClicked();
+    void cardCreationHandler();
 
     customSet currentSet;
-    customSetTitle currentTitle;
 
     int numOfCards;
     int numOfTitles;

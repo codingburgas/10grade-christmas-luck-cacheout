@@ -1,11 +1,11 @@
-#include "BLL/lib/customset.h"
+#include "BLL/lib/readySets.h"
 
-customSetTitle::customSetTitle(){
+readySetTitle::readySetTitle(){
     title = "";
     numCards = 0;
 }
 
-customSet::customSet() {
+readySet::readySet() {
     numTitles = 0;
     titles.resize(1); // Ensure at least one title
     titles[0].cards.resize(1); // Ensure at least one card for the first title
@@ -13,7 +13,7 @@ customSet::customSet() {
     titles[0].cards[0].backSide = "";
 }
 
-customCard::customCard() {
+readyCard::readyCard() {
     frontSide = "";
     backSide = "";
 }

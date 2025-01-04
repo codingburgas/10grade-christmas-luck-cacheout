@@ -1,12 +1,12 @@
 #ifndef CUSTOMSET_H
 #define CUSTOMSET_H
-#include<string>
+#include <string>
 #include <vector>
 
-class card
+class customCard
 {
 public:
-    card();
+    customCard();
     std::string frontSide;
     std::string backSide;
 };
@@ -19,7 +19,7 @@ public:
     customSetTitle();
     int numCards;
     std::string title;
-    std::vector<card> cards;
+    std::vector<customCard> cards;
 };
 
 

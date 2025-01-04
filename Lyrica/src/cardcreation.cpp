@@ -45,7 +45,7 @@ void cardCreation::submitClicked()
     currentSet.titles[0].numCards += numOfCards;
     currentSet.numTitles += numOfTitles;
 
-    currentSet.titles[numOfTitles - 1].cards.push_back(card());
+    currentSet.titles[numOfTitles - 1].cards.push_back(customCard());
 
     QString title = ui->titleinput->text();
     QString frontSideCurrent = ui->frontInput->text();
@@ -63,10 +63,11 @@ void cardCreation::submitClicked()
     ui->backinput->setText("");
 
     numOfCards++;
+    std::cout << numOfCards << std::endl;
 }
 
 void cardCreation::doneClicked(){
-
+    cardCreation::cardCreationHandler();
     numOfTitles++;
     numOfCards = 1;
     ui->titleinput->setText("");
@@ -81,6 +82,27 @@ void cardCreation::doneClicked(){
         qDebug() << "Cards vector size:" << currentSet.titles[numOfTitles].cards.size();
     }
     qDebug() << "Titles vector size:" << currentSet.titles.size();
+}
+
+void cardCreation::cardCreationHandler(){
+    int tempNumOfCards = 0;
+    std::fstream customSetsFile;
+    customSetsFile.open("../Lyrica/files/customSets.txt", std::ios::out | std::ios::app);
+    if(!customSetsFile){
+        std::cout << "customSets.txt failed to load!" << std::endl;
+    }else{
+        std::cout << "customSets.txt loaded successfully!" << std::endl;
+        writeInFile(customSetsFile, currentSet.titles[numOfTitles - 1].title);
+        for(int i = 1; i < numOfCards; i++){
+            if(tempNumOfCards <= numOfCards){
+                writeInFileMult(customSetsFile, currentSet.titles[numOfTitles - 1].cards[tempNumOfCards].frontSide, currentSet.titles[numOfTitles - 1].cards[tempNumOfCards].backSide);
+                tempNumOfCards++;
+            }else break;
+        }
+        customSetsFile << std::endl;
+        std::cout << "Writing cards in file...";
+        customSetsFile.close();
+    }
 }
 
 cardCreation::~cardCreation()
