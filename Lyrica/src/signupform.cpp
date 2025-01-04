@@ -10,6 +10,7 @@ signupForm::signupForm(QWidget *parent)
 }
 
 void signupForm::displaySignUp(){
+    // Setting up background image
     QPixmap backgroundPix(":/images/assets/registerBackground.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 }
