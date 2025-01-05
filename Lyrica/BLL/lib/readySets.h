@@ -11,8 +11,6 @@ public:
     std::string backSide;
 };
 
-
-
 class readySetTitle
 {
 public:
@@ -35,5 +33,6 @@ public:
 namespace readySetsNS{
 extern readySet readySets;
 }
+
 
 #endif // READYSETS_H

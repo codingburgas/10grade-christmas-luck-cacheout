@@ -21,3 +21,5 @@ readyCard::readyCard() {
 namespace readySetsNS{
 readySet readySets;
 }
+
+

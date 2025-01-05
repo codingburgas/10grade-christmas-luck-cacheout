@@ -120,6 +120,9 @@ font-family: fontSpaceGrotesk;</string>
      <height>164</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: transparent;
 border: none;</string>
@@ -439,6 +442,278 @@ QPushButton::hover{
     <string>Sign Out</string>
    </property>
   </widget>
+  <widget class="QLabel" name="noSetWarning">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>550</y>
+     <width>841</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #6D6D6D;
+font:40px;
+qproperty-wordWrap: true;
+font-family: fontSpaceGrotesk;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setTitle1">
+   <property name="geometry">
+    <rect>
+     <x>92</x>
+     <y>320</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setTitle2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>320</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setTitle3">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>320</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setTitle4">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>320</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customSetTitle1">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>570</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customSetTitle3">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>570</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customSetTitle2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>570</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customSetTitle4">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>570</y>
+     <width>301</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: black;
+    font: 30px;
+    font-family: Space-Grotesk;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    font: 32px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>background</zorder>
+  <zorder>welcomeBack</zorder>
+  <zorder>username</zorder>
+  <zorder>yourSets</zorder>
+  <zorder>yourCustomSets</zorder>
+  <zorder>set1</zorder>
+  <zorder>set2</zorder>
+  <zorder>set3</zorder>
+  <zorder>set4</zorder>
+  <zorder>customSet3</zorder>
+  <zorder>customSet4</zorder>
+  <zorder>leftArrowSets</zorder>
+  <zorder>rightArrowSets</zorder>
+  <zorder>leftArrowCustom</zorder>
+  <zorder>rightArrowCustom</zorder>
+  <zorder>createNewSet</zorder>
+  <zorder>addNewSet</zorder>
+  <zorder>signOutButton</zorder>
+  <zorder>noSetWarning</zorder>
+  <zorder>customSet2</zorder>
+  <zorder>customSet1</zorder>
+  <zorder>setTitle1</zorder>
+  <zorder>setTitle2</zorder>
+  <zorder>setTitle3</zorder>
+  <zorder>setTitle4</zorder>
+  <zorder>customSetTitle1</zorder>
+  <zorder>customSetTitle3</zorder>
+  <zorder>customSetTitle2</zorder>
+  <zorder>customSetTitle4</zorder>
  </widget>
  <resources/>
  <connections/>

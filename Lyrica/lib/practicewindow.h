@@ -8,7 +8,8 @@
 #include <QFontDatabase>
 #include <QTransform>
 #include "lib/pageHandler.h"
-
+#include "../BLL/lib/customset.h"
+#include "../BLL/lib/readySets.h"
 namespace Ui {
 class PracticeWindow;
 }
