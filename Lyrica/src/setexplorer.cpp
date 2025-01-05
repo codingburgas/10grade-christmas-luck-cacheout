@@ -2,6 +2,7 @@
 #include "ui_setexplorer.h"
 #include <QPushButton>
 #include <QEvent>
+#include <QDebug>
 
 SetExplorer::SetExplorer(QWidget *parent) :
     QDialog(parent),
@@ -30,6 +31,8 @@ void SetExplorer::displaySetExplorer(){
 }
 
 void SetExplorer::actionHandler(PageBools& pages){
+    SetExplorer::displaySets();
+
     connect(ui->set1, &QPushButton::clicked, this, [&pages, this](){
         pages.setExplorerWindowShouldDisplay = false;
         pages.practiceWindowShouldDisplay = true;
@@ -40,6 +43,15 @@ void SetExplorer::actionHandler(PageBools& pages){
         pages.dashboardWindowShouldDisplay = true;
         emit pageStateChanged();
     });
+}
+
+void SetExplorer::displaySets(){
+    QString set1Title = QString::fromStdString(readySetsNS::readySets.titles[numOfTitles].title);
+
+    std::cout << readySetsNS::readySets.numTitles << std::endl;
+    std::cout << readySetsNS::readySets.titles[numOfTitles].title << std::endl;
+    ui->set1->setText(set1Title);
+    qDebug() << set1Title;
 }
 
 // Event filter to handle hover events

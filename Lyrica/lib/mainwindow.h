@@ -33,8 +33,6 @@ private:
     void getReadySetsFromFile();
     void getCustomSetsFromFile();
 
-    readySet readySet;
-    customSet customSet;
     int numOfCards;
 };
 #endif // MAINWINDOW_H

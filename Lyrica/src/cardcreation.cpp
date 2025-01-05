@@ -34,54 +34,55 @@ void cardCreation::actionHandler(PageBools& pages){
 
 void cardCreation::submitClicked()
 {
-    qDebug() << "Titles vector size:" << currentSet.titles.size();
+    customSetsNS::customSets.titles[0].numCards = numOfCards -1;
+    customSetsNS::customSets.numTitles = numOfTitles - 1;
+
+    qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
     qDebug() << "Number of cards:" << numOfCards;
 
-    if (static_cast<int>(currentSet.titles.size()) < numOfTitles) {
-        currentSet.titles.resize(numOfTitles);
+    if (static_cast<int>(customSetsNS::customSets.titles.size()) < numOfTitles) {
+        customSetsNS::customSets.titles.resize(numOfTitles);
         qDebug() << "resized";
     }
 
-    currentSet.titles[0].numCards += numOfCards;
-    currentSet.numTitles += numOfTitles;
-
-    currentSet.titles[numOfTitles - 1].cards.push_back(customCard());
+    customSetsNS::customSets.titles[numOfTitles - 1].cards.push_back(customCard());
 
     QString title = ui->titleinput->text();
     QString frontSideCurrent = ui->frontInput->text();
     QString backSideCurrent = ui->backinput->text();
 
-    currentSet.titles[numOfTitles - 1].title = title.toStdString();
-    currentSet.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide = frontSideCurrent.toStdString();
-    currentSet.titles[numOfTitles - 1].cards[numOfCards - 1].backSide = backSideCurrent.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].title = title.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide = frontSideCurrent.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide = backSideCurrent.toStdString();
 
-    std::cout << currentSet.titles[numOfTitles - 1].title << std::endl;
-    std::cout << currentSet.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide << std::endl;
-    std::cout << currentSet.titles[numOfTitles - 1].cards[numOfCards - 1].backSide << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].title << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide << std::endl;
 
     ui->frontInput->setText("");
     ui->backinput->setText("");
 
     numOfCards++;
-    std::cout << numOfCards << std::endl;
 }
 
 void cardCreation::doneClicked(){
     cardCreation::cardCreationHandler();
     numOfTitles++;
+    customSetsNS::customSets.numTitles = numOfTitles - 1;
+    std::cout << "Vector number of titles: " << customSetsNS::customSets.numTitles << std::endl;
     numOfCards = 1;
     ui->titleinput->setText("");
 
     qDebug() << "Done clicked";
-    if (static_cast<int>(currentSet.titles.size()) < numOfTitles) {
-        currentSet.titles.resize(numOfTitles);
+    if (static_cast<int>(customSetsNS::customSets.titles.size()) < numOfTitles) {
+        customSetsNS::customSets.titles.resize(numOfTitles);
         qDebug() << "resized";
     }
 
-    if (numOfTitles < static_cast<int>(currentSet.titles.size())) {
-        qDebug() << "Cards vector size:" << currentSet.titles[numOfTitles].cards.size();
+    if (numOfTitles < static_cast<int>(customSetsNS::customSets.titles.size())) {
+        qDebug() << "Cards vector size:" << customSetsNS::customSets.titles[numOfTitles].cards.size();
     }
-    qDebug() << "Titles vector size:" << currentSet.titles.size();
+    qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
 }
 
 void cardCreation::cardCreationHandler(){
@@ -92,15 +93,15 @@ void cardCreation::cardCreationHandler(){
         std::cout << "customSets.txt failed to load!" << std::endl;
     }else{
         std::cout << "customSets.txt loaded successfully!" << std::endl;
-        writeInFile(customSetsFile, currentSet.titles[numOfTitles - 1].title);
+        writeInFile(customSetsFile, customSetsNS::customSets.titles[numOfTitles - 1].title);
         for(int i = 1; i < numOfCards; i++){
             if(tempNumOfCards <= numOfCards){
-                writeInFileMult(customSetsFile, currentSet.titles[numOfTitles - 1].cards[tempNumOfCards].frontSide, currentSet.titles[numOfTitles - 1].cards[tempNumOfCards].backSide);
+                writeInFileMult(customSetsFile, customSetsNS::customSets.titles[numOfTitles - 1].cards[tempNumOfCards].frontSide, customSetsNS::customSets.titles[numOfTitles - 1].cards[tempNumOfCards].backSide);
                 tempNumOfCards++;
             }else break;
         }
         customSetsFile << std::endl;
-        std::cout << "Writing cards in file...";
+        std::cout << "Writing cards in file..." << std::endl;
         customSetsFile.close();
     }
 }

@@ -32,4 +32,8 @@ public:
     std::vector<readySetTitle> titles;
 };
 
+namespace readySetsNS{
+extern readySet readySets;
+}
+
 #endif // READYSETS_H

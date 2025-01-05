@@ -39,9 +39,9 @@ void MainWindow::actionHandler(PageBools& pages){
 }
 
 void MainWindow::getReadySetsFromFile(){
-    numOfCards = readySet.titles[readySet.numTitles].numCards;
-    readySet.titles[readySet.numTitles].cards.resize(numOfCards + 1);
-    std::cout << "Vector Size: " << readySet.titles[readySet.numTitles].cards.size() << std::endl;
+    numOfCards = readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].numCards;
+    readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].cards.resize(numOfCards + 1);
+    std::cout << "Vector Size: " << readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].cards.size() << std::endl;
 
     std::fstream readySetsFile;
     readySetsFile.open("../Lyrica/files/readySets.txt", std::ios::in | std::ios::out | std::ios::app);
@@ -51,23 +51,23 @@ void MainWindow::getReadySetsFromFile(){
     }else{
         std::cout << "readySets.txt loaded successfully!" << std::endl;
         getFromFileReady(readySetsFile,
-                    readySet.titles,
-                    readySet.numTitles,
-                    readySet.titles[readySet.numTitles].numCards);
+                    readySetsNS::readySets.titles,
+                    readySetsNS::readySets.numTitles,
+                    readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].numCards);
         readySetsFile.close();
 
     }
-    std::cout << "Vector Size: " << readySet.titles[readySet.numTitles].cards.size() << std::endl;
-    std::cout << "Title: " << readySet.titles[readySet.numTitles].title << std::endl;
-    std::cout << readySet.numTitles << std::endl;
-    std::cout << readySet.titles[readySet.numTitles].numCards << std::endl;
+    std::cout << "Vector Size: " << readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].cards.size() << std::endl;
+    std::cout << "Title: " << readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].title << std::endl;
+    std::cout << readySetsNS::readySets.numTitles << std::endl;
+    std::cout << readySetsNS::readySets.titles[readySetsNS::readySets.numTitles].numCards << std::endl;
 }
 
 void MainWindow::getCustomSetsFromFile(){
-    numOfCards = customSet.titles[customSet.numTitles].numCards;
-    customSet.titles[customSet.numTitles].cards.resize(numOfCards + 1);
+    numOfCards = customSetsNS::customSets.titles[customSetsNS::customSets.numTitles].numCards;
+    customSetsNS::customSets.titles[customSetsNS::customSets.numTitles].cards.resize(numOfCards + 1);
 
-    std::cout << "Vector Size: " << customSet.titles[customSet.numTitles].cards.size() << std::endl;
+    std::cout << "Vector Size: " << customSetsNS::customSets.titles[customSetsNS::customSets.numTitles].cards.size() << std::endl;
     std::fstream customSetsFile;
     customSetsFile.open("../Lyrica/files/customSets.txt", std::ios::in | std::ios::out | std::ios::app);
 
@@ -77,10 +77,12 @@ void MainWindow::getCustomSetsFromFile(){
         std::cout << "customSets.txt loaded successfully!" << std::endl;
 
         getFromFileCustom(customSetsFile,
-                          customSet.titles,
-                          customSet.numTitles,
-                          customSet.titles[customSet.numTitles].numCards);
+                          customSetsNS::customSets.titles,
+                          customSetsNS::customSets.numTitles,
+                          customSetsNS::customSets.titles[customSetsNS::customSets.numTitles].numCards);
         customSetsFile.close();
+
+        std::cout << "Last custom set number of cards " << customSetsNS::customSets.titles[customSetsNS::customSets.numTitles].cards.size() << std::endl;
     }
 }
 

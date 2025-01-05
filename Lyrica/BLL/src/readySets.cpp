@@ -17,3 +17,7 @@ readyCard::readyCard() {
     frontSide = "";
     backSide = "";
 }
+
+namespace readySetsNS{
+readySet readySets;
+}

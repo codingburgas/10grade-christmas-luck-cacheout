@@ -17,3 +17,7 @@ customCard::customCard() {
     frontSide = "";
     backSide = "";
 }
+
+namespace customSetsNS{
+customSet customSets;
+}

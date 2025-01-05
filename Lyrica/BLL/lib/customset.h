@@ -32,4 +32,8 @@ public:
     std::vector<customSetTitle> titles;
 };
 
+namespace customSetsNS{
+extern customSet customSets;
+}
+
 #endif // CUSTOMSET_H

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "lib/pageHandler.h"
+#include "BLL/lib/readySets.h"
 
 namespace Ui {
 class SetExplorer;
@@ -25,6 +26,8 @@ protected:
 private:
     Ui::SetExplorer *ui;
     void displaySetExplorer();
+    void displaySets();
+    int numOfTitles = 1;
 };
 
 #endif // SETEXPLORER_H
