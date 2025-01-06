@@ -7,7 +7,7 @@ cardCreation::cardCreation(QWidget *parent)
     , ui(new Ui::cardCreation)
 {
     ui->setupUi(this);
-    QPixmap backgroundPix(":/images/cardCreateBg.png");
+    QPixmap backgroundPix(":/images/assets/cardCreateBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
     numOfCards = 1;
     numOfTitles = 1;
@@ -23,7 +23,7 @@ void cardCreation::actionHandler(PageBools& pages){
 
     //Page Handling
     connect(ui->doneButton, &QPushButton::clicked, this, [&pages, this](){
-        if(ui->frontInput->text().isEmpty() && ui->backinput->text().isEmpty()){ //Checks that the text boxes are empty
+        if(ui->frontInput->text().isEmpty() && ui->backinput->text().isEmpty() && customSetsNS::customSets.titles[0].numCards > 1){ //Checks that the text boxes are empty
             cardCreation::doneClicked();
             pages.cardCreationShouldDisplay = false;
             pages.dashboardWindowShouldDisplay = true;
@@ -37,38 +37,48 @@ void cardCreation::submitClicked()
     customSetsNS::customSets.titles[0].numCards = numOfCards -1;
     customSetsNS::customSets.numTitles = numOfTitles - 1;
 
+    qDebug() << "Number of cards1:" << customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size();
     qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
-    qDebug() << "Number of cards:" << numOfCards;
+    qDebug() << "Number of cards2:" << customSetsNS::numCards;
 
     if (static_cast<int>(customSetsNS::customSets.titles.size()) < numOfTitles) {
-        customSetsNS::customSets.titles.resize(numOfTitles);
         qDebug() << "resized";
+        customSetsNS::customSets.titles.resize(numOfTitles);
     }
 
-    customSetsNS::customSets.titles[numOfTitles - 1].cards.push_back(customCard());
+    // Ensure cards vector is resized
+    if(static_cast<int>(customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size()) < customSetsNS::numCards + 1){
+        qDebug() << "Resizing cards vector...";
+        customSetsNS::customSets.titles[customSetsNS::numTitles].cards.resize(numOfCards);
+    }
 
     QString title = ui->titleinput->text();
     QString frontSideCurrent = ui->frontInput->text();
     QString backSideCurrent = ui->backinput->text();
 
-    customSetsNS::customSets.titles[numOfTitles - 1].title = title.toStdString();
-    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide = frontSideCurrent.toStdString();
-    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide = backSideCurrent.toStdString();
+    std::cout << "It gets to here" << std::endl;
 
-    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].title << std::endl;
-    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide << std::endl;
-    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide << std::endl;
+    customSetsNS::customSets.titles[customSetsNS::numTitles].title = title.toStdString();
+    std::cout << "Here too" << std::endl;
+    customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide = frontSideCurrent.toStdString();
+    customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].backSide = backSideCurrent.toStdString();
+
+    std::cout << "Here too" << std::endl;
+    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].title << std::endl;
+    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide << std::endl;
+    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].backSide << std::endl;
 
     ui->frontInput->setText("");
     ui->backinput->setText("");
 
+    customSetsNS::numCards++;
     numOfCards++;
 }
 
 void cardCreation::doneClicked(){
     cardCreation::cardCreationHandler();
     numOfTitles++;
-    customSetsNS::customSets.numTitles = numOfTitles - 1;
+    customSetsNS::customSets.numTitles = customSetsNS::numTitles;
     std::cout << "Vector number of titles: " << customSetsNS::customSets.numTitles << std::endl;
     numOfCards = 1;
     ui->titleinput->setText("");

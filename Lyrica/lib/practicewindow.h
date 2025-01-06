@@ -8,8 +8,10 @@
 #include <QFontDatabase>
 #include <QTransform>
 #include "lib/pageHandler.h"
-#include "../BLL/lib/customset.h"
-#include "../BLL/lib/readySets.h"
+#include "BLL/lib/readySets.h"
+#include "BLL/lib/customset.h"
+#include "lib/finalwindow.h"
+
 namespace Ui {
 class PracticeWindow;
 }
@@ -22,6 +24,7 @@ public:
     explicit PracticeWindow(QWidget *parent = nullptr);
     ~PracticeWindow();
     void actionHandler(PageBools& pages);
+    void resetPracticeWindow();
 
 signals:
     void pageStateChanged();
@@ -29,8 +32,10 @@ signals:
 private:
     Ui::PracticeWindow *ui;
     void DisplayPracticeWindow();
-    bool eventFilter(QObject *obj, QEvent *event) override;
-    bool finalCard = true;
+    void displayReadySet();
+    void displayCustomSet();
+
+    bool finalCard;
 };
 
 #endif // PRACTICEWINDOW_H

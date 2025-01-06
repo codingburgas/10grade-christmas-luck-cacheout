@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/images">
-        <file>cardCreateBg.png</file>
+        <file>assets/cardCreateBg.png</file>
     </qresource>
 </RCC>

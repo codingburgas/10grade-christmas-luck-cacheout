@@ -20,4 +20,8 @@ customCard::customCard() {
 
 namespace customSetsNS{
 customSet customSets;
+int numTitles = 0;
+int numCards = 0;
+bool active = false;
+bool knowAnswer = true;
 }

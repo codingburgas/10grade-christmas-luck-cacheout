@@ -61,7 +61,6 @@ FORMS += \
     ui/cardcreation.ui \
     ui/mainwindow.ui
 
-FORMS += \
     
      
 RESOURCES += \

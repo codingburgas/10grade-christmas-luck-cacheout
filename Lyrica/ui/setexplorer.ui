@@ -58,8 +58,9 @@ font-family: fontSpaceGrotesk;</string>
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:transparent;
-border:none;</string>
+    <string notr="true">background-color: transparent;
+border: none;
+</string>
    </property>
    <property name="text">
     <string/>
@@ -313,6 +314,294 @@ QPushButton:hover{
    </property>
    <property name="text">
     <string>←</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set1Text">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>160</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set2Text">
+   <property name="geometry">
+    <rect>
+     <x>415</x>
+     <y>160</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set3Text">
+   <property name="geometry">
+    <rect>
+     <x>749</x>
+     <y>160</y>
+     <width>300</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set4Text">
+   <property name="geometry">
+    <rect>
+     <x>1084</x>
+     <y>160</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set5Text">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>348</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set6Text">
+   <property name="geometry">
+    <rect>
+     <x>415</x>
+     <y>348</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set7Text">
+   <property name="geometry">
+    <rect>
+     <x>749</x>
+     <y>348</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set8Text">
+   <property name="geometry">
+    <rect>
+     <x>1084</x>
+     <y>348</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set9Text">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>537</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set10Text">
+   <property name="geometry">
+    <rect>
+     <x>415</x>
+     <y>537</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 27px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set11Text">
+   <property name="geometry">
+    <rect>
+     <x>749</x>
+     <y>537</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="set12Text">
+   <property name="geometry">
+    <rect>
+     <x>1084</x>
+     <y>537</y>
+     <width>300</width>
+     <height>157</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font: 28px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
+</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

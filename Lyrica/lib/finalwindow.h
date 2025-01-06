@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "lib/pageHandler.h"
+#include "BLL/lib/readySets.h"
+#include "BLL/lib/customset.h"
 
 namespace Ui {
 class finalwindow;

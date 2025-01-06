@@ -20,6 +20,8 @@ readyCard::readyCard() {
 
 namespace readySetsNS{
 readySet readySets;
+int numTitles = 0;
+int numCards = 0;
+bool active = false;
+bool knowAnswer = true;
 }
-
-

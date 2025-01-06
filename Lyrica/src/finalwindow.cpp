@@ -17,11 +17,6 @@ void finalwindow::displayFinalWindow(){
 
 void finalwindow::actionHandler(PageBools& pages){
     //Page Handling
-    connect(ui->backButton, &QPushButton::clicked, this, [&pages, this](){
-        pages.finalWindowShouldDisplay = false;
-        pages.dashboardWindowShouldDisplay = true;
-        emit pageStateChanged();
-    });
 
     connect(ui->restartButton, &QPushButton::clicked, this, [&pages, this](){
         pages.finalWindowShouldDisplay = false;
@@ -29,9 +24,11 @@ void finalwindow::actionHandler(PageBools& pages){
         emit pageStateChanged();
     });
 
-    connect(ui->tryButton, &QPushButton::clicked, this, [&pages, this](){
+    connect(ui->returnButton, &QPushButton::clicked, this, [&pages, this](){
+        readySetsNS::active = false;
+        customSetsNS::active = false;
         pages.finalWindowShouldDisplay = false;
-        pages.practiceWindowShouldDisplay = true;
+        pages.dashboardWindowShouldDisplay = true;
         emit pageStateChanged();
     });
 }

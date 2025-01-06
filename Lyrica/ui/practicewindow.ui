@@ -57,9 +57,9 @@ QPushButton:hover{
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>136</y>
+     <y>120</y>
      <width>900</width>
-     <height>60</height>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -140,7 +140,7 @@ QPushButton:hover{
     <string notr="true">qproperty-wordWrap: true;
 qproperty-alignment: AlignCenter;
 color:white;
-font:30px;
+font:45px;
 font-weight:bold;
 font-family: fontSpaceGrotesk;
 background-color: transparent;</string>
@@ -149,27 +149,34 @@ background-color: transparent;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="hintTextBox">
+  <widget class="QPushButton" name="finishTextBox">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>530</y>
-     <width>280</width>
+     <x>665</x>
+     <y>580</y>
+     <width>150</width>
      <height>35</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">qproperty-alignment: AlignCenter;
-color:#8E8E8E;
-font:14px;
-font-weight:bold;
-font-family: fontSpaceGrotesk;</string>
+    <string notr="true">QPushButton{
+	qproperty-alignment: AlignCenter;
+	color: black;
+	font:25px;
+	font-weight:bold;
+	font-family: fontSpaceGrotesk;
+	background-color: transparent;
+	border: none;
+}
+QPushButton:hover{
+	color: #8E8E8E;
+}</string>
    </property>
    <property name="text">
-    <string>*Click the card to reveal explanation*</string>
+    <string>Finish Set</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="flashCard">
+  <widget class="QLabel" name="flashCard">
    <property name="geometry">
     <rect>
      <x>536</x>
@@ -186,14 +193,36 @@ border: none;</string>
     <string/>
    </property>
   </widget>
-  <zorder>flashCard</zorder>
+  <widget class="QLabel" name="meaning">
+   <property name="geometry">
+    <rect>
+     <x>575</x>
+     <y>255</y>
+     <width>330</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">qproperty-wordWrap: true;
+qproperty-alignment: AlignCenter;
+color:black;
+font:50px;
+font-family: fontSpaceGrotesk;
+background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string>It means:</string>
+   </property>
+  </widget>
   <zorder>background</zorder>
+  <zorder>flashCard</zorder>
   <zorder>backArrow</zorder>
   <zorder>titleTextBox</zorder>
   <zorder>knowTextBox</zorder>
   <zorder>dontKnowTextBox</zorder>
-  <zorder>hintTextBox</zorder>
+  <zorder>finishTextBox</zorder>
   <zorder>flashCardTextBox</zorder>
+  <zorder>meaning</zorder>
  </widget>
  <resources/>
  <connections/>

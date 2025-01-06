@@ -73,7 +73,7 @@ font-size: 60px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #6D6D6D;</string>
+    <string notr="true">color: black;</string>
    </property>
    <property name="text">
     <string>Title</string>
@@ -96,7 +96,7 @@ font-size: 60px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #6D6D6D;</string>
+    <string notr="true">color: black;</string>
    </property>
    <property name="text">
     <string>Front side</string>
@@ -119,7 +119,7 @@ font-size: 60px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: #6D6D6D;</string>
+    <string notr="true">color: black;</string>
    </property>
    <property name="text">
     <string>Back side</string>
@@ -142,8 +142,14 @@ font-size: 60px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border:  none;
-color: black;</string>
+    <string notr="true">QPushButton{
+border:  none;
+color: black;
+}
+
+QPushButton:hover{
+color: #A366FF;
+}</string>
    </property>
    <property name="text">
     <string>Done</string>
@@ -166,8 +172,14 @@ color: black;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border:  none;
-color: #6D6D6D;</string>
+    <string notr="true">QPushButton{
+border:  none;
+color: #6D6D6D;
+}
+
+QPushButton:hover{
+color: #8BB5FF;
+}</string>
    </property>
    <property name="text">
     <string>Submit card</string>
@@ -189,7 +201,7 @@ color: #6D6D6D;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #F5F5F5;
+    <string notr="true">background-color: #CCCACA;
 border-color: rgb(255, 255, 255);
 border-radius: 15px;
 color: black;
@@ -212,7 +224,7 @@ padding-left: 15px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #F5F5F5;
+    <string notr="true">background-color: #CCCACA;
 border-color: black;
 border-width: 1px;
 border-radius: 15px;
@@ -236,7 +248,7 @@ padding-left: 15px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #F5F5F5;
+    <string notr="true">background-color: #CCCACA;
 border-color: rgb(255, 255, 255);
 border-radius: 15px;
 color: black;

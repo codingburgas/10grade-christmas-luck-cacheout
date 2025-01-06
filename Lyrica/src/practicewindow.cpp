@@ -8,7 +8,9 @@ PracticeWindow::PracticeWindow(QWidget *parent)
     ui->setupUi(this);
 
     PracticeWindow::DisplayPracticeWindow();
+    finalCard = false;
 }
+
 
 void PracticeWindow::DisplayPracticeWindow(){
     // Load the custom font
@@ -27,56 +29,174 @@ void PracticeWindow::DisplayPracticeWindow(){
     //Set the flashCard button icon
     QPixmap flashCardPix(":/images/assets/flashCard.png");
     QIcon buttonIcon(flashCardPix);
-    ui->flashCard->setIcon(buttonIcon);
-    ui->flashCard->setIconSize(QSize(418, 224));
-    ui->flashCard->installEventFilter(this); //Apply the hover effect
+    ui->flashCard->setPixmap(flashCardPix.scaled(418, 224, Qt::KeepAspectRatio));
 
-    // Set the title text
-    QString title = "Present Continuous";
-    ui->titleTextBox->setText(title);
-
-    // Set the flashcard text
-    QString flashCardText = "The present continuous of hover is hovering.";
-    ui->flashCardTextBox->setText(flashCardText);
     ui->flashCardTextBox->raise();
     ui->flashCardTextBox->setAttribute(Qt::WA_TransparentForMouseEvents); //Makes the text to not disturb the flashCard hover effect
 }
 
+
 void PracticeWindow::actionHandler(PageBools& pages){
-    //Page Handling
-    if(finalCard){
-        connect(ui->knowTextBox, &QPushButton::clicked, this, [&pages, this](){
-            pages.practiceWindowShouldDisplay = false;
-            pages.finalWindowShouldDisplay = true;
-            emit pageStateChanged();
-        });
+    static bool processing = false; // Guard flag to prevent recursive calls
+
+    if (processing) {
+        return;
     }
-    connect(ui->backArrow, &QPushButton::clicked, this, [&pages, this](){
+    processing = true;
+
+
+    // Displays only the active set
+    if (readySetsNS::active) {
+        displayReadySet();
+    }
+
+    if (customSetsNS::active) {
+        displayCustomSet();
+    }
+
+
+    // Know Button Handling and Final Card Handling
+    disconnect(ui->knowTextBox, &QPushButton::clicked, nullptr, nullptr);
+    connect(ui->knowTextBox, &QPushButton::clicked, this, [this]() {
+        if(!finalCard){
+            readySetsNS::knowAnswer = true;
+            customSetsNS::knowAnswer = true;
+            readySetsNS::numCards++;
+            customSetsNS::numCards++;
+
+            std::cout << "Clicked know button." << std::endl;
+            std::cout << readySetsNS::numCards << std::endl;
+
+            if (readySetsNS::active) {
+                displayReadySet(); // Refresh UI for ready set
+            }
+            if (customSetsNS::active) {
+                displayCustomSet(); // Refresh UI for custom set
+            }
+        }
+        if(finalCard){
+            readySetsNS::knowAnswer = true;
+            customSetsNS::knowAnswer = true;
+
+            if (readySetsNS::active) {
+                displayReadySet(); // Refresh UI for ready set
+            }
+            if (customSetsNS::active) {
+                displayCustomSet(); // Refresh UI for custom set
+            }
+        }
+    });
+
+
+    // Don't Know Button Handling
+    disconnect(ui->dontKnowTextBox, &QPushButton::clicked, nullptr, nullptr);
+    connect(ui->dontKnowTextBox, &QPushButton::clicked, this, [this]() {
+        readySetsNS::knowAnswer = false;
+        customSetsNS::knowAnswer = false;
+        std::cout << "Clicked don't know button." << std::endl;
+        if (readySetsNS::active) {
+            displayReadySet(); // Refresh UI for ready set
+        }
+        if (customSetsNS::active) {
+            displayCustomSet(); // Refresh UI for custom set
+        }
+        emit pageStateChanged();
+    });
+
+
+    // Back Button Handling
+    disconnect(ui->backArrow, &QPushButton::clicked, nullptr, nullptr);
+    connect(ui->backArrow, &QPushButton::clicked, this, [&pages, this]() {
+        readySetsNS::knowAnswer = true;
+        customSetsNS::knowAnswer = true;
+        readySetsNS::numCards = 0;
+        customSetsNS::numCards = 0;
+        finalCard = false;
+        if (readySetsNS::active) {
+            displayReadySet();
+        }
+
+        if (customSetsNS::active) {
+            displayCustomSet();
+        }
+        readySetsNS::active = false;
+        customSetsNS::active = false;
         pages.practiceWindowShouldDisplay = false;
         pages.dashboardWindowShouldDisplay = true;
         emit pageStateChanged();
     });
+
+
+    // Finish Set Button Handling
+    disconnect(ui->finishTextBox, &QPushButton::clicked, nullptr, nullptr);
+    connect(ui->finishTextBox, &QPushButton::clicked, this, [&pages, this]() {
+        if(finalCard){
+            qDebug() << "Finish Set button clicked!";
+            readySetsNS::knowAnswer = true;
+            customSetsNS::knowAnswer = true;
+            readySetsNS::numCards = 0;
+            customSetsNS::numCards = 0;
+            finalCard = false;
+            if (readySetsNS::active) {
+                displayReadySet();
+            }
+
+            if (customSetsNS::active) {
+                displayCustomSet();
+            }
+            pages.practiceWindowShouldDisplay = false;
+            pages.finalWindowShouldDisplay = true;
+            emit pageStateChanged();
+        }
+    });
+
+    processing = false; // Reset the guard
 }
 
-bool PracticeWindow::eventFilter(QObject *obj, QEvent *event){
-    QPushButton *button = qobject_cast<QPushButton*>(obj);
-    if (button) {
-        if (event->type() == QEvent::Enter) {
-            // When mouse enters, enlarge button and icon size
-            button->resize(428, 234); // Resize button
-            button->setIconSize(QSize(428, 234)); // Enlarge icon size
-            button->move(button->pos().x() - 5, button->pos().y() - 5);
-            return true;
-        } else if (event->type() == QEvent::Leave) {
-            // When mouse leaves, restore original button and icon size
-            button->resize(418, 224); // Restore button size
-            button->setIconSize(QSize(418, 224)); // Restore icon size
-            button->move(button->pos().x() + 5, button->pos().y() + 5);
-            return true;
-        }
+
+void PracticeWindow::displayReadySet(){
+    QString title = QString::fromStdString(readySetsNS::readySets.titles[readySetsNS::numTitles].title);
+    QString cardFront = QString::fromStdString(readySetsNS::readySets.titles[readySetsNS::numTitles].cards[readySetsNS::numCards].frontSide);
+    QString cardBack = QString::fromStdString(readySetsNS::readySets.titles[readySetsNS::numTitles].cards[readySetsNS::numCards].backSide);
+
+    ui->titleTextBox->setText(title);
+    if(readySetsNS::knowAnswer)
+        ui->flashCardTextBox->setText(cardFront);
+    else
+        ui->flashCardTextBox->setText(cardBack);
+
+    if (readySetsNS::numCards == readySetsNS::readySets.titles[readySetsNS::numTitles].cards.size() - 1) {
+        finalCard = true;
+        readySetsNS::numCards = readySetsNS::readySets.titles[readySetsNS::numTitles].cards.size() - 1;
+        qDebug() << "No more cards in readySets!";
     }
-    return QDialog::eventFilter(obj, event);
+
+    ui->finishTextBox->setVisible(finalCard);
+    ui->meaning->setVisible(!readySetsNS::knowAnswer);
 }
+
+
+void PracticeWindow::displayCustomSet(){
+    QString title = QString::fromStdString(customSetsNS::customSets.titles[customSetsNS::numTitles].title);
+    QString cardFront = QString::fromStdString(customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide);
+    QString cardBack = QString::fromStdString(customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].backSide);
+
+    ui->titleTextBox->setText(title);
+    if(customSetsNS::knowAnswer)
+        ui->flashCardTextBox->setText(cardFront);
+    else
+        ui->flashCardTextBox->setText(cardBack);
+
+    if (customSetsNS::numCards == customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size() - 1) {
+        finalCard = true;
+        customSetsNS::numCards = customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size() - 1;
+        qDebug() << "No more cards in customSets!";
+    }
+
+    ui->finishTextBox->setVisible(finalCard);
+    ui->meaning->setVisible(!customSetsNS::knowAnswer);
+}
+
 
 PracticeWindow::~PracticeWindow()
 {

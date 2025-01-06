@@ -461,225 +461,201 @@ font-family: fontSpaceGrotesk;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="setTitle1">
+  <widget class="QLabel" name="setTitle1">
    <property name="geometry">
     <rect>
      <x>92</x>
-     <y>320</y>
+     <y>264</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="setTitle2">
+  <widget class="QLabel" name="setTitle2">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>320</y>
+     <y>264</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="setTitle3">
+  <widget class="QLabel" name="setTitle3">
    <property name="geometry">
     <rect>
      <x>770</x>
-     <y>320</y>
+     <y>264</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="setTitle4">
+  <widget class="QLabel" name="setTitle4">
    <property name="geometry">
     <rect>
      <x>1100</x>
-     <y>320</y>
+     <y>264</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="customSetTitle1">
+  <widget class="QLabel" name="customSetTitle1">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>570</y>
+     <y>513</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="customSetTitle3">
+  <widget class="QLabel" name="customSetTitle3">
    <property name="geometry">
     <rect>
      <x>770</x>
-     <y>570</y>
+     <y>513</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="customSetTitle2">
+  <widget class="QLabel" name="customSetTitle2">
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>570</y>
+     <y>513</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="customSetTitle4">
+  <widget class="QLabel" name="customSetTitle4">
    <property name="geometry">
     <rect>
      <x>1100</x>
-     <y>570</y>
+     <y>513</y>
      <width>301</width>
-     <height>51</height>
+     <height>164</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-    color: black;
-    font: 30px;
-    font-family: Space-Grotesk;
-    font-weight: bold;
-    qproperty-alignment: AlignCenter;
-    background-color: transparent;
-    border: none;
-}
+    <string notr="true">color: white;
+font: 30px;
+font-family: Space-Grotesk;
+font-weight: bold;
+qproperty-alignment: AlignCenter;
+background-color: transparent;
+border: none;
+qproperty-wordWrap: true;
 
-QPushButton:hover {
-    font: 32px;
-}</string>
+</string>
    </property>
    <property name="text">
     <string/>

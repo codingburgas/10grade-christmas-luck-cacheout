@@ -32,8 +32,14 @@ public:
     std::vector<customSetTitle> titles;
 };
 
+
+
 namespace customSetsNS{
 extern customSet customSets;
+extern int numTitles;
+extern int numCards;
+extern bool active;
+extern bool knowAnswer;
 }
 
 #endif // CUSTOMSET_H

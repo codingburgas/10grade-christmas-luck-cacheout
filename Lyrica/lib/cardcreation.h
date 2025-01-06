@@ -27,6 +27,7 @@ signals:
 
 private:
     Ui::cardCreation *ui;
+    customCard newCard;
 
     void submitClicked();
     void doneClicked();

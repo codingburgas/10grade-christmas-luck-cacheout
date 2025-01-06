@@ -11,6 +11,8 @@ public:
     std::string backSide;
 };
 
+
+
 class readySetTitle
 {
 public:
@@ -32,7 +34,10 @@ public:
 
 namespace readySetsNS{
 extern readySet readySets;
+extern int numTitles;
+extern int numCards;
+extern bool active;
+extern bool knowAnswer;
 }
-
 
 #endif // READYSETS_H
