@@ -118,14 +118,15 @@ void dashboard::actionHandler(PageBools& pages){
 
 
     //Custom Sets Handling
+    disconnect(ui->customSet1, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->customSet1, &QPushButton::clicked, this, [&pages, this](){
         if(setsGroup1){
             customSetsNS::numTitles = 1;
             customSetsNS::active = true;
-        }else if(setsGroup2){
+        }else if(setsGroup2 && customSetsNS::customSets.titles.size() <= 5){
             customSetsNS::numTitles = 5;
             customSetsNS::active = true;
-        }else if(setsGroup3){
+        }else if(setsGroup3 && customSetsNS::customSets.titles.size() <= 9){
             customSetsNS::numTitles = 9;
             customSetsNS::active = true;
         }
@@ -134,14 +135,15 @@ void dashboard::actionHandler(PageBools& pages){
         emit pageStateChanged();
     });
 
+    disconnect(ui->customSet2, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->customSet2, &QPushButton::clicked, this, [&pages, this](){
         if(setsGroup1){
             customSetsNS::numTitles = 2;
             customSetsNS::active = true;
-        }else if(setsGroup2){
+        }else if(setsGroup2 && customSetsNS::customSets.titles.size() <= 6){
             customSetsNS::numTitles = 6;
             customSetsNS::active = true;
-        }else if(setsGroup3){
+        }else if(setsGroup3 && customSetsNS::customSets.titles.size() <= 10){
             customSetsNS::numTitles = 10;
             customSetsNS::active = true;
         }
@@ -150,14 +152,15 @@ void dashboard::actionHandler(PageBools& pages){
         emit pageStateChanged();
     });
 
+    disconnect(ui->customSet3, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->customSet3, &QPushButton::clicked, this, [&pages, this](){
         if(setsGroup1){
             customSetsNS::numTitles = 3;
             customSetsNS::active = true;
-        }else if(setsGroup2){
+        }else if(setsGroup2 && customSetsNS::customSets.titles.size() <= 7){
             customSetsNS::numTitles = 7;
             customSetsNS::active = true;
-        }else if(setsGroup3){
+        }else if(setsGroup3 && customSetsNS::customSets.titles.size() <= 11){
             customSetsNS::numTitles = 11;
             customSetsNS::active = true;
         }
@@ -166,14 +169,15 @@ void dashboard::actionHandler(PageBools& pages){
         emit pageStateChanged();
     });
 
+    disconnect(ui->customSet4, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->customSet4, &QPushButton::clicked, this, [&pages, this](){
         if(setsGroup1){
             customSetsNS::numTitles = 4;
             customSetsNS::active = true;
-        }else if(setsGroup2){
+        }else if(setsGroup2 && customSetsNS::customSets.titles.size() <= 8){
             customSetsNS::numTitles = 8;
             customSetsNS::active = true;
-        }else if(setsGroup3){
+        }else if(setsGroup3 && customSetsNS::customSets.titles.size() <= 12){
             customSetsNS::numTitles = 12;
             customSetsNS::active = true;
         }

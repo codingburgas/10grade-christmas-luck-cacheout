@@ -10,11 +10,15 @@ cardCreation::cardCreation(QWidget *parent)
     QPixmap backgroundPix(":/images/assets/cardCreateBg.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
     numOfCards = 1;
-    numOfTitles = 1;
+    numOfTitles = customSetsNS::customSets.titles.size();
+    qDebug() << numOfTitles;
+
+    customSetsNS::customSets.titles.resize(numOfTitles + 1);
 }
 
 void cardCreation::actionHandler(PageBools& pages){
     //Button Handling
+    disconnect(ui->submitCard, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->submitCard, &QPushButton::clicked, this, [this](){
         if(!ui->titleinput->text().isEmpty() && !ui->frontInput->text().isEmpty() && !ui->backinput->text().isEmpty()){ //Checks that the text boxes aren't empty
             cardCreation::submitClicked();
@@ -22,77 +26,97 @@ void cardCreation::actionHandler(PageBools& pages){
     });
 
     //Page Handling
+    disconnect(ui->doneButton, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->doneButton, &QPushButton::clicked, this, [&pages, this](){
-        if(ui->frontInput->text().isEmpty() && ui->backinput->text().isEmpty() && customSetsNS::customSets.titles[0].numCards > 1){ //Checks that the text boxes are empty
-            cardCreation::doneClicked();
+        if(ui->frontInput->text().isEmpty() && ui->backinput->text().isEmpty()){ //Checks that the text boxes are empty
+            qDebug() << "Done clicked and saved in file";
             pages.cardCreationShouldDisplay = false;
+            qDebug() << "cardCreationShouldDisplay is now false";
             pages.dashboardWindowShouldDisplay = true;
+            qDebug() << "dashboardWindowShouldDisplay is now true";
             emit pageStateChanged();
+            qDebug() << "emitted";
         } else ui->warning->setText("Submit card first!");
+    });
+
+
+    connect(ui->doneButton, &QPushButton::clicked, this, [this](){
+        if(ui->frontInput->text().isEmpty() && ui->backinput->text().isEmpty()){ //Checks that the text boxes are empty
+            cardCreation::doneClicked();
+        }
     });
 }
 
 void cardCreation::submitClicked()
 {
-    customSetsNS::customSets.titles[0].numCards = numOfCards -1;
-    customSetsNS::customSets.numTitles = numOfTitles - 1;
+    customSetsNS::customSets.titles[0].numCards = numOfCards;
+    customSetsNS::customSets.numTitles = numOfTitles;
 
     qDebug() << "Number of cards1:" << customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size();
     qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
-    qDebug() << "Number of cards2:" << customSetsNS::numCards;
 
-    if (static_cast<int>(customSetsNS::customSets.titles.size()) < numOfTitles) {
-        qDebug() << "resized";
-        customSetsNS::customSets.titles.resize(numOfTitles);
-    }
+
 
     // Ensure cards vector is resized
-    if(static_cast<int>(customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size()) < customSetsNS::numCards + 1){
+    qDebug() << customSetsNS::customSets.titles[numOfTitles - 1].cards.size();
+    qDebug() << numOfCards;
+    if(customSetsNS::customSets.titles[numOfTitles - 1].cards.size() < numOfCards){
         qDebug() << "Resizing cards vector...";
-        customSetsNS::customSets.titles[customSetsNS::numTitles].cards.resize(numOfCards);
+        customSetsNS::customSets.titles[numOfTitles - 1].cards.resize(numOfCards + 1);
+        qDebug() << "Resized!";
     }
 
+    std::cout << "It gets to here" << std::endl;
+
+    std::cout << "It gets to here" << std::endl;
     QString title = ui->titleinput->text();
     QString frontSideCurrent = ui->frontInput->text();
     QString backSideCurrent = ui->backinput->text();
 
     std::cout << "It gets to here" << std::endl;
 
-    customSetsNS::customSets.titles[customSetsNS::numTitles].title = title.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].title = title.toStdString();
     std::cout << "Here too" << std::endl;
-    customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide = frontSideCurrent.toStdString();
-    customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].backSide = backSideCurrent.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide = frontSideCurrent.toStdString();
+    customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide = backSideCurrent.toStdString();
 
     std::cout << "Here too" << std::endl;
-    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].title << std::endl;
-    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide << std::endl;
-    std::cout << customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].backSide << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].title << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].frontSide << std::endl;
+    std::cout << customSetsNS::customSets.titles[numOfTitles - 1].cards[numOfCards - 1].backSide << std::endl;
 
+    customSetsNS::customSets.titles[numOfTitles - 1].cards.push_back(newCard);
     ui->frontInput->setText("");
     ui->backinput->setText("");
 
-    customSetsNS::numCards++;
     numOfCards++;
 }
 
 void cardCreation::doneClicked(){
     cardCreation::cardCreationHandler();
+
+    customSetsNS::customSets.titles.push_back(newSet);
+
     numOfTitles++;
+    customSetsNS::numTitles++;
     customSetsNS::customSets.numTitles = customSetsNS::numTitles;
-    std::cout << "Vector number of titles: " << customSetsNS::customSets.numTitles << std::endl;
-    numOfCards = 1;
-    ui->titleinput->setText("");
 
     qDebug() << "Done clicked";
-    if (static_cast<int>(customSetsNS::customSets.titles.size()) < numOfTitles) {
+    qDebug() << "Vector number of titles: " << customSetsNS::customSets.numTitles;
+    qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
+
+    ui->titleinput->setText("");
+
+    if (numOfTitles - 1 > customSetsNS::customSets.titles.size()) {
         customSetsNS::customSets.titles.resize(numOfTitles);
-        qDebug() << "resized";
+        qDebug() << "Resized titles vector to size: " << customSetsNS::customSets.titles.size();
     }
 
     if (numOfTitles < static_cast<int>(customSetsNS::customSets.titles.size())) {
-        qDebug() << "Cards vector size:" << customSetsNS::customSets.titles[numOfTitles].cards.size();
+        qDebug() << "Cards vector size:" << customSetsNS::customSets.titles[numOfTitles - 1].cards.size();
     }
-    qDebug() << "Titles vector size:" << customSetsNS::customSets.titles.size();
+
+    numOfCards = 1;
 }
 
 void cardCreation::cardCreationHandler(){

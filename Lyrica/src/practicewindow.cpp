@@ -18,7 +18,7 @@ void PracticeWindow::DisplayPracticeWindow(){
     if (fontId == -1)
         qDebug() << "Failed to load custom font.";
     else
-        qDebug() << "Custom font loaded successfully.";
+        qDebug() << "Custom font loaded successfully. - practice";
     QString fontSpaceGrotesk = QFontDatabase::applicationFontFamilies(fontId).at(0);
 
 

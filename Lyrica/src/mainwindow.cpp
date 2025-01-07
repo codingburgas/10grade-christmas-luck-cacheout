@@ -15,7 +15,7 @@ void MainWindow::displayMainWindow(){
     //Loading the font
     int fontId = QFontDatabase::addApplicationFont(":/fonts/assets/SpaceGrotesk.ttf");
     if (fontId == -1) qDebug() << "Failed to load custom font.";
-    else qDebug() << "Custom font loaded successfully:";
+    else qDebug() << "Custom font loaded successfully: - main";
     QString fontSpaceGrotesk = QFontDatabase::applicationFontFamilies(fontId).at(0);
 
 

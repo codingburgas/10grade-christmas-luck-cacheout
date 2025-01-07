@@ -28,6 +28,7 @@ signals:
 private:
     Ui::cardCreation *ui;
     customCard newCard;
+    customSetTitle newSet;
 
     void submitClicked();
     void doneClicked();
@@ -35,6 +36,8 @@ private:
 
     int numOfCards;
     int numOfTitles;
+
+    bool resizedCards;
 };
 
 #endif // CARDCREATION_H
