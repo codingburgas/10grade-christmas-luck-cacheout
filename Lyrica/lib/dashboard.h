@@ -30,13 +30,16 @@ private:
     void displayReadySets(int cardNum);
     void displayCustomSets(int cardNum);
     bool eventFilter(QObject *obj, QEvent *event) override;
+
     bool setsGroup1 = true;
     bool setsGroup2 = false;
     bool setsGroup3 = false;
     bool customSetsGroup1 = true;
     bool customSetsGroup2 = false;
     bool customSetsGroup3 = false;
+    bool customSetsExist = false;
 
+    int numOfSets;
 };
 
 #endif // DASHBOARD_H

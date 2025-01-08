@@ -28,7 +28,7 @@ void signupForm::actionHandler(PageBools& pages){
     connect(ui->signUpButton, &QPushButton::clicked, this, &signupForm::textBoxHandler);
     connect(ui->signUpButton, &QPushButton::clicked, this, &signupForm::signUpHandler);
 
-    //Page Handling
+    // Page Handling
     connect(ui->signUpButton, &QPushButton::clicked, this, [&pages, this](){
         if(signupForm::signUpHandler()){
             pages.signUpWindowShouldDisplay = false;
@@ -58,7 +58,9 @@ bool signupForm::signUpHandler(){
         std::cout << "credentials.txt loaded successfully!" << std::endl;
         std::string fileLine = createFileLine(credentials::username, credentials::email, credentials::password);
         std::cout<<fileLine<<std::endl;
+        // Ensure credentials do not exist already
         check = checkIfInFileLine(credentialsFile, credentials::username, credentials::email);
+        // Ensure credentials are all valid
         checkValid = checkValidity(credentials::username, credentials::email, credentials::password);
         credentialsFile.close();
         credentialsFile.open("../Lyrica/files/credentials.txt", std::ios::in | std::ios::out | std::ios::app);

@@ -9,8 +9,6 @@
 
 std::string getLine(std::fstream& file);
 
-int getFileSize(std::fstream& file);
-
 void writeInFile(std::fstream& file, std::string& line);
 
 void writeInFileMult(std::fstream& file, std::string& line1, std::string& line2);

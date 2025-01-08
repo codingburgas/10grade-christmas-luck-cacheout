@@ -458,15 +458,15 @@ qproperty-wordWrap: true;
 font-family: fontSpaceGrotesk;</string>
    </property>
    <property name="text">
-    <string/>
+    <string>No custom sets yet!</string>
    </property>
   </widget>
   <widget class="QLabel" name="setTitle1">
    <property name="geometry">
     <rect>
-     <x>92</x>
+     <x>101</x>
      <y>264</y>
-     <width>301</width>
+     <width>280</width>
      <height>164</height>
     </rect>
    </property>
@@ -489,9 +489,9 @@ qproperty-wordWrap: true;
   <widget class="QLabel" name="setTitle2">
    <property name="geometry">
     <rect>
-     <x>430</x>
+     <x>440</x>
      <y>264</y>
-     <width>301</width>
+     <width>280</width>
      <height>164</height>
     </rect>
    </property>
@@ -514,9 +514,9 @@ qproperty-wordWrap: true;
   <widget class="QLabel" name="setTitle3">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>780</x>
      <y>264</y>
-     <width>301</width>
+     <width>280</width>
      <height>164</height>
     </rect>
    </property>
@@ -539,9 +539,9 @@ qproperty-wordWrap: true;
   <widget class="QLabel" name="setTitle4">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>1110</x>
      <y>264</y>
-     <width>301</width>
+     <width>280</width>
      <height>164</height>
     </rect>
    </property>

@@ -3,27 +3,17 @@
 std::string getLine(std::fstream& file)
 {
     std::string line;
-    if (!file.eof())
+    if (!file.eof())    // Check that end of file has not been reached
         std::getline(file, line);
     return line;
 }
 
-int getFileSize(std::fstream& file)
-{
-    int fileSize = 0;
-    while (!file.eof())
-    {
-        fileSize++;
-    }
-    return fileSize;
-}
-
-void writeInFile(std::fstream& file, std::string& line)
+void writeInFile(std::fstream& file, std::string& line)     // Input a single line in file
 {
     file << line << std::endl;
 }
 
-void writeInFileMult(std::fstream&file, std::string& line1, std::string& line2){
+void writeInFileMult(std::fstream&file, std::string& line1, std::string& line2){    // Input multiple lines in file
     file << line1 << std::endl;
     file << line2 << std::endl;
 }
@@ -42,7 +32,7 @@ void getFromFileReady(std::fstream& file, std::vector<readySetTitle>& titles, in
         return;
     }
 
-    while (!file.eof()) {
+    while (!file.eof()) {    // Runs until end of file has been reached
         std::cout << "Loop in progress" << std::endl;
 
         // Read card information (frontSide and backSide)
@@ -78,7 +68,7 @@ void getFromFileReady(std::fstream& file, std::vector<readySetTitle>& titles, in
         }
     }
 
-    // Add the last title to the vector (if it has data)
+    // Add the last title to the vector if it has data
     if (!newTitle.cards.empty()) {
         titles.push_back(newTitle);
         numTitles++;
@@ -111,7 +101,7 @@ void getFromFileCustom(std::fstream& file, std::vector<customSetTitle>& titles, 
             // Add the card to the current title
             newTitle.cards.push_back(newCard);
 
-            // Increment the card count
+            // Increase the card count
             numCards++;
             std::cout << "Front Side: " << fileLine2 << std::endl;
             std::cout << "Back Side: " << fileLine3 << std::endl;
@@ -131,7 +121,7 @@ void getFromFileCustom(std::fstream& file, std::vector<customSetTitle>& titles, 
         }
     }
 
-    // Add the last title to the vector (if it has data)
+    // Add the last title to the vector if it has data
     if (!newTitle.cards.empty()) {
         titles.push_back(newTitle);
         numTitles++;
@@ -142,10 +132,10 @@ void getFromFileCustom(std::fstream& file, std::vector<customSetTitle>& titles, 
 bool checkIfInFile(std::fstream& file, std::string& line)
 {
     std::string fileLine;
-    while (!file.eof())
+    while (!file.eof())     // Run until end of file has been reached
     {
         std::getline(file, fileLine);
-        if (fileLine == line)
+        if (fileLine == line)     // If the line exists in the file return true
         {
             return true;
         }
@@ -156,10 +146,10 @@ bool checkIfInFile(std::fstream& file, std::string& line)
 bool checkIfInFileLine(std::fstream& file, std::string& username, std::string email)
 {
     std::string fileLine;
-    while (!file.eof())
+    while (!file.eof())     // Run until end of file has been reached
     {
         std::getline(file, fileLine);
-        if (fileLine.find(username) != std::string::npos && fileLine.find(email) != std::string::npos)
+        if (fileLine.find(username) != std::string::npos && fileLine.find(email) != std::string::npos)      // If both exist in the file return true
         {
             return true;
         }

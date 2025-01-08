@@ -16,10 +16,12 @@ void SetExplorer::displaySetExplorer(){
     QPixmap backgroundIm(":/images/assets/mainBackground.png");
     QPixmap card(":/images/assets/flashCard.png");
     ui->background->setPixmap(backgroundIm.scaled(1500, 800, Qt::KeepAspectRatio));
+
     QList<QPushButton*> addCardList = {
         ui->set1, ui->set2, ui->set3, ui->set4, ui->set5, ui->set6, ui->set7, ui->set8, ui->set9, ui->set10, ui->set11, ui->set12
     };
-    for (QPushButton* button : addCardList) {
+
+    for (QPushButton* button : addCardList) {      // Set the same properties on all cards
         if (button) {
             QIcon buttonIcon(card);
             button->setIcon(buttonIcon);
@@ -43,6 +45,7 @@ void SetExplorer::actionHandler(PageBools& pages){
         pages.dashboardWindowShouldDisplay = true;
         emit pageStateChanged();
     });
+
 
     //Card Handling
     connect(ui->set1, &QPushButton::clicked, this, [&pages, this](){
@@ -155,6 +158,7 @@ void SetExplorer::displaySets(){
     QString set11Title = QString::fromStdString(readySetsNS::readySets.titles[numOfTitles + 10].title);
     QString set12Title = QString::fromStdString(readySetsNS::readySets.titles[numOfTitles + 11].title);
 
+    // Set the respective set title on each card in order
     ui->set1Text->setText(set1Title);
     ui->set1Text->setAttribute(Qt::WA_TransparentForMouseEvents);
     ui->set2Text->setText(set2Title);

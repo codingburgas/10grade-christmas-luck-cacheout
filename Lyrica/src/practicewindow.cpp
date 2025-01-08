@@ -18,7 +18,7 @@ void PracticeWindow::DisplayPracticeWindow(){
     if (fontId == -1)
         qDebug() << "Failed to load custom font.";
     else
-        qDebug() << "Custom font loaded successfully. - practice";
+        qDebug() << "Custom font loaded successfully";
     QString fontSpaceGrotesk = QFontDatabase::applicationFontFamilies(fontId).at(0);
 
 
@@ -26,13 +26,13 @@ void PracticeWindow::DisplayPracticeWindow(){
     QPixmap backgroundPix(":/images/assets/mainBackground.png");
     ui->background->setPixmap(backgroundPix.scaled(1500, 800, Qt::KeepAspectRatio));
 
-    //Set the flashCard button icon
+    // Set the flashCard button icon
     QPixmap flashCardPix(":/images/assets/flashCard.png");
     QIcon buttonIcon(flashCardPix);
     ui->flashCard->setPixmap(flashCardPix.scaled(418, 224, Qt::KeepAspectRatio));
 
     ui->flashCardTextBox->raise();
-    ui->flashCardTextBox->setAttribute(Qt::WA_TransparentForMouseEvents); //Makes the text to not disturb the flashCard hover effect
+    ui->flashCardTextBox->setAttribute(Qt::WA_TransparentForMouseEvents); // Make the text to not disturb the flashCard hover effect
 }
 
 
@@ -45,7 +45,7 @@ void PracticeWindow::actionHandler(PageBools& pages){
     processing = true;
 
 
-    // Displays only the active set
+    // Display only the active set
     if (readySetsNS::active) {
         displayReadySet();
     }
@@ -63,10 +63,6 @@ void PracticeWindow::actionHandler(PageBools& pages){
             customSetsNS::knowAnswer = true;
             readySetsNS::numCards++;
             customSetsNS::numCards++;
-
-            std::cout << "Clicked know button." << std::endl;
-            std::cout << readySetsNS::numCards << std::endl;
-
             if (readySetsNS::active) {
                 displayReadySet(); // Refresh UI for ready set
             }
@@ -74,6 +70,7 @@ void PracticeWindow::actionHandler(PageBools& pages){
                 displayCustomSet(); // Refresh UI for custom set
             }
         }
+
         if(finalCard){
             readySetsNS::knowAnswer = true;
             customSetsNS::knowAnswer = true;
@@ -93,7 +90,6 @@ void PracticeWindow::actionHandler(PageBools& pages){
     connect(ui->dontKnowTextBox, &QPushButton::clicked, this, [this]() {
         readySetsNS::knowAnswer = false;
         customSetsNS::knowAnswer = false;
-        std::cout << "Clicked don't know button." << std::endl;
         if (readySetsNS::active) {
             displayReadySet(); // Refresh UI for ready set
         }
@@ -113,11 +109,10 @@ void PracticeWindow::actionHandler(PageBools& pages){
         customSetsNS::numCards = 0;
         finalCard = false;
         if (readySetsNS::active) {
-            displayReadySet();
+            displayReadySet(); // Refresh UI for ready set
         }
-
         if (customSetsNS::active) {
-            displayCustomSet();
+            displayCustomSet(); // Refresh UI for custom set
         }
         readySetsNS::active = false;
         customSetsNS::active = false;
@@ -131,7 +126,6 @@ void PracticeWindow::actionHandler(PageBools& pages){
     disconnect(ui->finishTextBox, &QPushButton::clicked, nullptr, nullptr);
     connect(ui->finishTextBox, &QPushButton::clicked, this, [&pages, this]() {
         if(finalCard){
-            qDebug() << "Finish Set button clicked!";
             readySetsNS::knowAnswer = true;
             customSetsNS::knowAnswer = true;
             readySetsNS::numCards = 0;
@@ -162,9 +156,10 @@ void PracticeWindow::displayReadySet(){
     ui->titleTextBox->setText(title);
     if(readySetsNS::knowAnswer)
         ui->flashCardTextBox->setText(cardFront);
-    else
+    else    // Show backSide if frontSide is not known
         ui->flashCardTextBox->setText(cardBack);
 
+    // Check if the last card has been reached
     if (readySetsNS::numCards == readySetsNS::readySets.titles[readySetsNS::numTitles].cards.size() - 1) {
         finalCard = true;
         readySetsNS::numCards = readySetsNS::readySets.titles[readySetsNS::numTitles].cards.size() - 1;
@@ -184,12 +179,13 @@ void PracticeWindow::displayCustomSet(){
     ui->titleTextBox->setText(title);
     if(customSetsNS::knowAnswer)
         ui->flashCardTextBox->setText(cardFront);
-    else
+    else    // Show backSide if frontSide is not known
         ui->flashCardTextBox->setText(cardBack);
 
-    if (customSetsNS::numCards == customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size() - 1) {
+    // Check if the last card has been reached
+    if (customSetsNS::customSets.titles[customSetsNS::numTitles].cards[customSetsNS::numCards].frontSide.empty()) {
         finalCard = true;
-        customSetsNS::numCards = customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size() - 1;
+        customSetsNS::numCards = customSetsNS::customSets.titles[customSetsNS::numTitles].cards.size() - 3;
         qDebug() << "No more cards in customSets!";
     }
 

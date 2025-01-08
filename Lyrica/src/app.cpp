@@ -6,6 +6,7 @@ App::App(){
 }
 
 void App::signalCatch(){
+    // Catch all signals for page changes from every page
     QObject::connect(&mainWindow, &MainWindow::pageStateChanged, this, &App::display);
     QObject::connect(&signUp, &signupForm::pageStateChanged, this, &App::display);
     QObject::connect(&signIn, &signinForm::pageStateChanged, this, &App::display);

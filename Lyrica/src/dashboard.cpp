@@ -9,6 +9,7 @@ dashboard::dashboard(QWidget *parent)
 {
     ui->setupUi(this);
 
+    numOfSets = 0;
 }
 
 
@@ -19,6 +20,7 @@ void dashboard::displayDashboard(){
 
     QString dashUsername = QString::fromStdString(credentials::username);
     ui->username->setText(dashUsername + "!");
+
 }
 
 
@@ -31,7 +33,7 @@ void dashboard::actionHandler(PageBools& pages){
     //Page Handling
     connect(ui->signOutButton, &QPushButton::clicked, this, [&pages, this](){
         pages.dashboardWindowShouldDisplay = false;
-        pages.signUpWindowShouldDisplay = true;
+        pages.mainWindowShouldDisplay = true;
         credentials::username = "";
         credentials::email = "";
         credentials::password = "";
@@ -115,6 +117,7 @@ void dashboard::actionHandler(PageBools& pages){
         pages.practiceWindowShouldDisplay = true;
         emit pageStateChanged();
     });
+
 
 
     //Custom Sets Handling
@@ -211,13 +214,15 @@ void dashboard::actionHandler(PageBools& pages){
             setsGroup2 = true;
         }
     });
+
+
     // Arrows for custom sets
     connect(ui->rightArrowCustom, &QPushButton::clicked, this, [this]() {
         if (customSetsGroup1) {
             displayCustomSets(5);
             customSetsGroup1 = false;
             customSetsGroup2 = true;
-        } else if (setsGroup2) {
+        } else if (customSetsGroup2) {
             displayCustomSets(9);
             customSetsGroup2 = false;
             customSetsGroup3 = true;
@@ -235,6 +240,7 @@ void dashboard::actionHandler(PageBools& pages){
             customSetsGroup2 = true;
         }
     });
+
 }
 
 
@@ -242,7 +248,7 @@ void dashboard::displayReadySets(int cardNum){
     QPixmap card(":/images/assets/card.png");
     QList<QPushButton*> CardList = { ui->set1, ui->set2 ,ui->set3, ui->set4};
 
-    for (QPushButton* button : CardList) {
+    for (QPushButton* button : CardList) {      // Set the same properties on all cards
         if (button) {
             QIcon buttonIcon(card);
             button->setIcon(buttonIcon);
@@ -251,6 +257,7 @@ void dashboard::displayReadySets(int cardNum){
         }
     }
 
+    // Set the respective set title on each card in order
     ui->setTitle1->setText(QString::fromStdString(readySetsNS::readySets.titles[cardNum].title));
     ui->setTitle1->setAttribute(Qt::WA_TransparentForMouseEvents);
     ui->setTitle2->setText(QString::fromStdString(readySetsNS::readySets.titles[cardNum + 1].title));
@@ -265,38 +272,52 @@ void dashboard::displayReadySets(int cardNum){
 void  dashboard::displayCustomSets(int cardNum){
     QPixmap card(":/images/assets/card.png");
     QIcon buttonIcon(card);
+    numOfSets = customSetsNS::customSets.numTitles;
 
-
-    int numOfSets = customSetsNS::customSets.numTitles;
-    if(numOfSets == 0)  ui->noSetWarning->setText("No custom sets yet !");
+    // Show the custom sets and sets their title if they exist
     if(numOfSets >= cardNum ){
-        ui->customSetTitle1->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum].title));
-        ui->customSetTitle1->setAttribute(Qt::WA_TransparentForMouseEvents);
-        ui->customSet1->setIcon(buttonIcon);
-        ui->customSet1->setIconSize(QSize(300, 157));
-        ui->customSet1->installEventFilter(this);
+        if(!customSetsNS::customSets.titles[cardNum].title.empty() && !(customSetsNS::customSets.titles[cardNum].title == " ")){    // Check if there's any information on the card in the vector
+            ui->customSetTitle1->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum].title));
+            ui->customSetTitle1->setAttribute(Qt::WA_TransparentForMouseEvents);
+            ui->customSet1->setIcon(buttonIcon);
+            ui->customSet1->setIconSize(QSize(300, 157));
+            ui->customSet1->installEventFilter(this);
+            customSetsExist = true;
+        }
     }
     if(numOfSets >= cardNum + 1){
-        ui->customSetTitle2->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 1].title));
-        ui->customSetTitle2->setAttribute(Qt::WA_TransparentForMouseEvents);
-        ui->customSet2->setIcon(buttonIcon);
-        ui->customSet2->setIconSize(QSize(300, 157));
-        ui->customSet2->installEventFilter(this);
+        if(!customSetsNS::customSets.titles[cardNum + 1].title.empty() && !(customSetsNS::customSets.titles[cardNum + 1].title == " ")){    // Check if there's any information on the card in the vector
+            ui->customSetTitle2->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 1].title));
+            ui->customSetTitle2->setAttribute(Qt::WA_TransparentForMouseEvents);
+            ui->customSet2->setIcon(buttonIcon);
+            ui->customSet2->setIconSize(QSize(300, 157));
+            ui->customSet2->installEventFilter(this);
+            customSetsExist = true;
+            }
     }
     if(numOfSets >= cardNum + 2){
-        ui->customSetTitle3->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 2].title));
-        ui->customSetTitle3->setAttribute(Qt::WA_TransparentForMouseEvents);
-        ui->customSet3->setIcon(buttonIcon);
-        ui->customSet3->setIconSize(QSize(300, 157));
-        ui->customSet3->installEventFilter(this);
+        if(!customSetsNS::customSets.titles[cardNum + 2].title.empty() && !(customSetsNS::customSets.titles[cardNum + 2].title == " ")){    // Check if there's any information on the card in the vector
+            ui->customSetTitle3->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 2].title));
+            ui->customSetTitle3->setAttribute(Qt::WA_TransparentForMouseEvents);
+            ui->customSet3->setIcon(buttonIcon);
+            ui->customSet3->setIconSize(QSize(300, 157));
+            ui->customSet3->installEventFilter(this);
+            customSetsExist = true;
+        }
     }
     if(numOfSets >= cardNum + 3){
-        ui->customSetTitle4->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 3].title));
-        ui->customSetTitle4->setAttribute(Qt::WA_TransparentForMouseEvents);
-        ui->customSet4->setIcon(buttonIcon);
-        ui->customSet4->setIconSize(QSize(300, 157));
-        ui->customSet4->installEventFilter(this);
+        if(!customSetsNS::customSets.titles[cardNum + 3].title.empty() && !(customSetsNS::customSets.titles[cardNum + 3].title == " ")){    // Check if there's any information on the card in the vector
+            ui->customSetTitle4->setText(QString::fromStdString(customSetsNS::customSets.titles[cardNum + 3].title));
+            ui->customSetTitle4->setAttribute(Qt::WA_TransparentForMouseEvents);
+            ui->customSet4->setIcon(buttonIcon);
+            ui->customSet4->setIconSize(QSize(300, 157));
+            ui->customSet4->installEventFilter(this);
+            customSetsExist = true;
+        }
     }
+
+    // Show no custom sets text if there are no custom sets
+    ui->noSetWarning->setVisible(!customSetsExist);
 }
 
 

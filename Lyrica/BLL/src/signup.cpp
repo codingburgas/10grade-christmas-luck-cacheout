@@ -2,27 +2,27 @@
 
 bool checkPassword(std::string password)
 {
-    bool checkSize1 = false;
-    bool checkSize2 = false;
+    bool checkSize = false;
+    bool checkEmpty = false;
     bool checkSpaces = false;
     bool checkUpper = false;
     bool checkSpecial = false;
     bool checkNumber = false;
 
-    if (password.size() >= 6 && password.size() <= 16) checkSize1 = true;
+    if (password.size() >= 6 && password.size() <= 16) checkSize = true;   // Check that password is the correct size
 
-    if(!password.empty()) checkSize2 = true;
+    if(!password.empty()) checkEmpty = true;    //
 
     if (password.find(' ') != std::string::npos) checkSpaces = true;
 
-    for (unsigned int i = 0; i < password.size(); i++)
+    for (unsigned int i = 0; i < password.size(); i++)      // Run until the end of password has been reached
     {
-        if (password[i] >= 65 && password[i] <= 90) checkUpper = true;
-        if (password[i] >= 48 && password[i] <= 57) checkNumber = true;
-        if (!(password[i] >= 65 && password[i] <= 90) && !(password[i] >= 48 && password[i] <= 57) && !(password[i] >= 97 && password[i] <= 122)) checkSpecial = true;
+        if (password[i] >= 65 && password[i] <= 90) checkUpper = true;      // Check if there is an upper case letter
+        if (password[i] >= 48 && password[i] <= 57) checkNumber = true;      // Check if there is a number
+        if (!(password[i] >= 65 && password[i] <= 90) && !(password[i] >= 48 && password[i] <= 57) && !(password[i] >= 97 && password[i] <= 122)) checkSpecial = true;      // Check if there is a special character
     }
 
-    if (checkSize1 && checkSize2 && checkUpper && checkNumber && checkSpecial && !checkSpaces)
+    if (checkSize && checkEmpty && checkUpper && checkNumber && checkSpecial && !checkSpaces)   // If password is inside the parameters return true
         return true;
     else
         return false;
@@ -64,6 +64,7 @@ bool checkEmail(const std::string& email) {
 }
 
 bool checkValidity(const std::string& username, const std::string& email, const std::string& password) {
+    // Check if all credentials are valid
     bool check = false;
     if(checkPassword(password) && checkUsername(username) && checkEmail(email)) check = true;
     return check;
@@ -71,6 +72,7 @@ bool checkValidity(const std::string& username, const std::string& email, const 
 
 std::string createFileLine(std::string& username, std::string& email, std::string& password)
 {
+    // Input all credentials in the file
     std::string inputLine;
     inputLine = username + " " + email + " " + password;
     return inputLine;
